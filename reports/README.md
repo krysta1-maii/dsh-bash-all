@@ -3,6 +3,13 @@
 每个 `logs/<name>.jsonl` 对应 `reports/<name>/`；12 用例的汇总见
 `reports/cases-step0-summary.md`。
 
+
+环境基线：
+
+- Step 0：`reports/step0-environment.md`
+- Step 0.1（bash 工具可调用包体快照）：`reports/step0.1-environment.md`
+- Step 0.1 包体逐项探测 CSV 与重跑脚本：
+  `reports/step0.1-environment/`
 重新生成单个日志报告：
 
 ```bash

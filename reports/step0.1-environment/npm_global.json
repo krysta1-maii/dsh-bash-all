@@ -1,0 +1,21 @@
+{
+  "name": "lib",
+  "dependencies": {
+    "@deepseek-ai/dsh": {
+      "version": "0.1.0-rc.6",
+      "overridden": false
+    },
+    "corepack": {
+      "version": "0.35.0",
+      "overridden": false
+    },
+    "npm": {
+      "version": "11.17.0",
+      "overridden": false
+    },
+    "pnpm": {
+      "version": "11.21.0",
+      "overridden": false
+    }
+  }
+}

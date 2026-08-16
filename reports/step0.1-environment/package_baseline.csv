@@ -1,0 +1,133 @@
+bundle,priority,domain,kind,item,recommended,status,version,detail
+step0.1-core,P0,Python 入口、测试与轻量胶水,apt,python-is-python3,step0.1,installed,3.13.3-1+build1,默认 core
+step0.1-core,P0,Python 入口、测试与轻量胶水,apt,python3-venv,step0.1,installed,3.14.3-0ubuntu2,默认 core
+step0.1-core,P0,Python 入口、测试与轻量胶水,apt,python3-pytest,step0.1,installed,9.0.2-4,默认 core
+step0.1-core,P0,Python 入口、测试与轻量胶水,apt,python3-websocket,step0.1,missing,,默认 core
+step0.1-core,P0,Python 入口、测试与轻量胶水,apt,zip,step0.1,installed,3.0-15ubuntu3,默认 core
+step0.1-core,P0,Python 入口、测试与轻量胶水,apt,unzip,step0.1,installed,6.0-29ubuntu1,默认 core
+step0.1-core,P0,Python 入口、测试与轻量胶水,apt,pngcheck,step0.1,missing,,默认 core
+step0.1-docs,P0,文档、PDF 与字体,apt,pandoc,step0.1,installed,3.7.0.2+ds-1,docs profile；单镜像时纳入
+step0.1-docs,P0,文档、PDF 与字体,apt,poppler-utils,step0.1,installed,26.01.0-2ubuntu0.1,docs profile；单镜像时纳入
+step0.1-docs,P0,文档、PDF 与字体,apt,poppler-data,step0.1,installed,0.4.12-1build1,docs profile；单镜像时纳入
+step0.1-docs,P0,文档、PDF 与字体,apt,ghostscript,step0.1,installed,10.06.0~dfsg-3ubuntu1,docs profile；单镜像时纳入
+step0.1-docs,P0,文档、PDF 与字体,apt,fontconfig,step0.1,installed,2.17.1-3ubuntu1,docs profile；单镜像时纳入
+step0.1-docs,P0,文档、PDF 与字体,apt,fonts-noto-cjk,step0.1,installed,1:20240730+repack1-1build1,docs profile；单镜像时纳入
+step0.1-docs,P0,文档、PDF 与字体,apt,python3-reportlab,step0.1,missing,,docs profile；单镜像时纳入
+step0.1-docs,P0,文档、PDF 与字体,apt,python3-pymupdf,step0.1,missing,,docs profile；单镜像时纳入
+step0.1-docs,P0,文档、PDF 与字体,apt,python3-svglib,step0.1,missing,,docs profile；单镜像时纳入
+step0.1-docs,P0,文档、PDF 与字体,apt,python3-fonttools,step0.1,installed,4.61.1-3build1,docs profile；单镜像时纳入
+step0.1-docs,P0,文档、PDF 与字体,apt,weasyprint,step0.1,missing,,docs profile；单镜像时纳入
+step0.1-build,P0,原生构建与发布,apt,build-essential,step0.1,installed,12.12ubuntu2.26.04.2,build profile；单镜像时纳入
+step0.1-build,P0,原生构建与发布,apt,cmake,step0.1,installed,4.2.3-2ubuntu2,build profile；单镜像时纳入
+step0.1-build,P0,原生构建与发布,apt,ninja-build,step0.1,installed,1.13.2-1,build profile；单镜像时纳入
+step0.1-build,P0,原生构建与发布,apt,pkgconf,step0.1,installed,2.5.1-4,build profile；单镜像时纳入
+step0.1-data,P1,科学计算、数据与绘图,apt,python3-scipy,step0.1,installed,1.16.3-4build1,data profile；按任务挂载
+step0.1-data,P1,科学计算、数据与绘图,apt,python3-matplotlib,step0.1,installed,3.10.7+dfsg1-2build1,data profile；按任务挂载
+step0.1-data,P1,科学计算、数据与绘图,apt,python3-pandas,step0.1,installed,2.3.3+dfsg-3ubuntu1,data profile；按任务挂载
+step0.1-context,,已存在环境包,apt,python3,observed,installed,3.14.3-0ubuntu2,Python 3 interpreter
+step0.1-context,,已存在环境包,apt,python3-pip,observed,installed,25.1.1+dfsg-1ubuntu2,pip entry point
+step0.1-context,,已存在环境包,apt,python3-numpy,observed,installed,1:2.3.5+ds-3ubuntu1,NumPy (Step 0 carry-over)
+step0.1-context,,已存在环境包,apt,python3-pil,observed,installed,12.1.1-2ubuntu1.2,Pillow (Step 0 carry-over)
+step0.1-context,,已存在环境包,apt,google-chrome-stable,observed,installed,151.0.7922.137-1,Google Chrome (Step 0 carry-over)
+step0.1-context,,已存在环境包,apt,chafa,observed,installed,1.18.1-1,terminal image viewer (Step 0 carry-over)
+step0.1-context,,已存在环境包,apt,imagemagick,observed,installed,8:7.1.2.18+dfsg1-1,convert/identify/magick (Step 0 carry-over)
+step0.1-context,,已存在环境包,apt,tesseract-ocr,observed,installed,5.5.0-1build1,OCR engine (Step 0 carry-over)
+step0.1-context,,已存在环境包,apt,tesseract-ocr-eng,observed,installed,1:4.1.0-2build1,English OCR data (Step 0 carry-over)
+step0.1-context,,已存在环境包,apt,ripgrep,observed,installed,15.1.0-1ubuntu1,rg
+step0.1-context,,已存在环境包,apt,gh,observed,installed,2.46.0-4,GitHub CLI
+step0.1-context,,已存在环境包,apt,curl,observed,installed,8.18.0-1ubuntu2.3,curl
+step0.1-context,,已存在环境包,apt,wget,observed,installed,1.25.0-2ubuntu4,wget
+step0.1-core,,,cli,python,observed,installed,Python 3.14.4,/usr/bin/python
+step0.1-core,,,cli,python3,observed,installed,Python 3.14.4,/usr/bin/python3
+step0.1-core,,,cli,pip,observed,installed,pip 25.1.1 from /usr/lib/python3/dist-packages/pip (python 3.14),/usr/bin/pip
+step0.1-core,,,cli,pip3,observed,installed,pip 25.1.1 from /usr/lib/python3/dist-packages/pip (python 3.14),/usr/bin/pip3
+step0.1-core,,,cli,pytest,step0.1,installed,pytest 9.0.2,/usr/bin/pytest
+step0.1-core,,,cli,zip,step0.1,installed,"Copyright (c) 1990-2008 Info-ZIP - Type 'zip ""-L""' for software license.",/usr/bin/zip
+step0.1-core,,,cli,unzip,step0.1,installed,"UnZip 6.00 of 20 April 2009, by Debian. Original by Info-ZIP.",/usr/bin/unzip
+step0.1-core,,,cli,pngcheck,step0.1,missing,,
+step0.1-docs,,,cli,pandoc,step0.1,installed,pandoc 3.7.0.2,/usr/bin/pandoc
+step0.1-docs,,,cli,pdftotext,step0.1,installed,pdftotext version 26.01.0,/usr/bin/pdftotext
+step0.1-docs,,,cli,pdfinfo,step0.1,installed,pdfinfo version 26.01.0,/usr/bin/pdfinfo
+step0.1-docs,,,cli,pdftoppm,step0.1,installed,pdftoppm version 26.01.0,/usr/bin/pdftoppm
+step0.1-docs,,,cli,gs,step0.1,installed,10.06.0,/usr/bin/gs
+step0.1-docs,,,cli,fc-list,step0.1,installed,fontconfig version 2.17.1,/usr/bin/fc-list
+step0.1-docs,,,cli,fc-cache,step0.1,installed,fontconfig version 2.17.1,/usr/bin/fc-cache
+step0.1-docs,,,cli,weasyprint,step0.1,missing,,
+step0.1-build,,,cli,make,step0.1,installed,GNU Make 4.4.1,/usr/bin/make
+step0.1-build,,,cli,gcc,step0.1,installed,gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0,/usr/bin/gcc
+step0.1-build,,,cli,g++,step0.1,installed,g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0,/usr/bin/g++
+step0.1-build,,,cli,cmake,step0.1,installed,cmake version 4.2.3,/usr/bin/cmake
+step0.1-build,,,cli,ctest,step0.1,installed,ctest version 4.2.3,/usr/bin/ctest
+step0.1-build,,,cli,ninja,step0.1,installed,1.13.2,/usr/bin/ninja
+step0.1-build,,,cli,pkgconf,step0.1,installed,2.5.1,/usr/bin/pkgconf
+step0.1-build,,,cli,pkg-config,observed,installed,2.5.1,/usr/bin/pkg-config
+step0.1-build,,,cli,dpkg-deb,observed,installed,Debian 'dpkg-deb' package archive backend version 1.23.7 (amd64).,/usr/bin/dpkg-deb
+step0.1-build,,,cli,meson,context,missing,,
+step0.1-build,,,cli,gfortran,context,missing,,
+step0.1-build,,,cli,clang,context,missing,,
+step0-legacy,,,cli,chafa,step0,installed,Chafa version 1.18.1,/usr/bin/chafa
+step0-legacy,,,cli,convert,step0,installed,Version: ImageMagick 7.1.2-18 Q16 x86_64 23822 https://imagemagick.org,/usr/bin/convert
+step0-legacy,,,cli,identify,step0,installed,Version: ImageMagick 7.1.2-18 Q16 x86_64 23822 https://imagemagick.org,/usr/bin/identify
+step0-legacy,,,cli,magick,step0,installed,Version: ImageMagick 7.1.2-18 Q16 x86_64 23822 https://imagemagick.org,/usr/bin/magick
+step0-legacy,,,cli,tesseract,step0,installed,tesseract 5.5.0,/usr/bin/tesseract
+step0-legacy,,,cli,google-chrome,step0,installed,Google Chrome 151.0.7922.137,/usr/bin/google-chrome
+step0.1-p2,,,cli,git,observed,installed,git version 2.53.0,/usr/bin/git
+step0.1-p2,,,cli,gh,observed,installed,gh version 2.46.0 (2025-12-13 Ubuntu 2.46.0-4),/usr/bin/gh
+step0.1-p2,,,cli,rg,observed,installed,ripgrep 15.1.0,/usr/bin/rg
+step0.1-p2,,,cli,curl,observed,installed,curl 8.18.0 (x86_64-pc-linux-gnu) libcurl/8.18.0 OpenSSL/3.5.5 zlib/1.3.1 brotli/1.2.0 zstd/1.5.7 libidn2/2.3.8 libpsl/0.21.2 libssh2/1.11.1 nghttp2/1.68.0 librtmp/2.3 mit-krb5/1.22.1 OpenLDAP/2.6.10,/usr/bin/curl
+step0.1-p2,,,cli,wget,observed,installed,GNU Wget 1.25.0 built on linux-gnu.,/usr/bin/wget
+step0.1-p2,,,cli,awk,observed,installed,"GNU Awk 5.3.2, API 4.0, PMA Avon 8-g1, (GNU MPFR 4.2.2, GNU MP 6.3.0)",/usr/bin/awk
+step0.1-p2,,,cli,sed,observed,installed,sed (GNU sed) 4.9,/usr/bin/sed
+step0.1-p2,,,cli,perl,observed,installed,"This is perl 5, version 40, subversion 1 (v5.40.1) built for x86_64-linux-gnu-thread-multi",/usr/bin/perl
+step0.1-p2,,,cli,tar,observed,installed,tar (GNU tar) 1.35,/usr/bin/tar
+step0.1-p2,,,cli,file,observed,installed,file-5.46,/usr/bin/file
+step0.1-p2,,,cli,jq,watch,missing,,
+step0.1-p2,,,cli,fd,watch,missing,,
+step0.1-p2,,,cli,tree,watch,missing,,
+step0.1-p2,,,cli,sqlite3,watch,missing,,
+step0.1-p2,,,cli,node,observed,installed,v24.19.0,/home/andyk/.nvm/versions/node/v24.19.0/bin/node
+step0.1-p2,,,cli,npm,observed,installed,11.17.0,/home/andyk/.nvm/versions/node/v24.19.0/bin/npm
+step0.1-p2,,,cli,npx,observed,installed,11.17.0,/home/andyk/.nvm/versions/node/v24.19.0/bin/npx
+step0.1-p2,,,cli,pnpm,observed,installed,11.21.0,/home/andyk/.local/share/pnpm/bin/pnpm
+step0.1-p2,,,cli,yarn,watch,missing,,
+step0.1-p2,,,cli,tsx,watch,missing,,
+step0.1-p2,,,cli,chromium,watch,missing,,
+step0.1-p2,,,cli,chromium-browser,watch,missing,,
+step0.1-p2,,,cli,firefox,watch,missing,,
+step0.1-p2,,,cli,playwright,watch,missing,,
+step0.1-core,,,python-module,pip,observed,installed,25.1.1,/usr/lib/python3/dist-packages/pip/__init__.py
+step0.1-core,,,python-module,pytest,step0.1,installed,9.0.2,/usr/lib/python3/dist-packages/pytest/__init__.py
+step0.1-core,,,python-module,websocket,step0.1,missing,,
+step0.1-core,,,python-module,websockets,context,missing,,
+step0.1-docs,,,python-module,reportlab,step0.1,missing,,
+step0.1-docs,,,python-module,fitz,step0.1,missing,,
+step0.1-docs,,,python-module,pymupdf,step0.1,missing,,
+step0.1-docs,,,python-module,svglib,step0.1,missing,,
+step0.1-docs,,,python-module,fontTools,step0.1,installed,4.61.1,/usr/lib/python3/dist-packages/fontTools/__init__.py
+step0.1-docs,,,python-module,weasyprint,step0.1,missing,,
+step0.1-data,,,python-module,numpy,step0,installed,2.3.5,/usr/lib/python3/dist-packages/numpy/__init__.py
+step0.1-data,,,python-module,scipy,step0.1,installed,1.16.3,/usr/lib/python3/dist-packages/scipy/__init__.py
+step0.1-data,,,python-module,pandas,step0.1,installed,2.3.3,/usr/lib/python3/dist-packages/pandas/__init__.py
+step0.1-data,,,python-module,matplotlib,step0.1,installed,3.10.7+dfsg1,/usr/lib/python3/dist-packages/matplotlib/__init__.py
+step0.1-data,,,python-module,PIL,step0,installed,12.1.1,/usr/lib/python3/dist-packages/PIL/__init__.py
+step0.1-data,,,python-module,sympy,context,installed,1.14.0,/usr/lib/python3/dist-packages/sympy/__init__.py
+step0.1-data,,,python-module,sklearn,watch,missing,,
+step0.1-p2,,,python-module,cv2,watch,missing,,
+step0.1-p2,,,python-module,playwright,watch,missing,,
+step0.1-p2,,,python-module,selenium,watch,missing,,
+step0.1-p2,,,python-module,flask,watch,missing,,
+step0.1-p2,,,python-module,fastapi,watch,missing,,
+step0.1-p2,,,python-module,uvicorn,watch,missing,,
+step0.1-p2,,,python-module,requests,observed,installed,2.32.5,/usr/lib/python3/dist-packages/requests/__init__.py
+step0.1-p2,,,python-module,httpx,watch,missing,,
+step0.1-p2,,,python-module,bs4,observed,installed,4.14.3,/usr/lib/python3/dist-packages/bs4/__init__.py
+step0.1-p2,,,python-module,lxml,observed,installed,6.0.2,/usr/lib/python3/dist-packages/lxml/__init__.py
+step0.1-p2,,,python-module,yaml,observed,installed,6.0.3,/usr/lib/python3/dist-packages/yaml/__init__.py
+step0.1-p2,,,python-module,openpyxl,observed,installed,3.1.5,/usr/lib/python3/dist-packages/openpyxl/__init__.py
+step0.1-p2,,,python-module,rich,observed,installed,13.9.4,/usr/lib/python3/dist-packages/rich/__init__.py
+step0.1-p2,,,python-module,click,observed,installed,8.1.8,/usr/lib/python3/dist-packages/click/__init__.py
+step0.1-p2,,,python-module,pygments,observed,installed,2.19.2,/usr/lib/python3/dist-packages/pygments/__init__.py
+step0.1-p2,,,npm-global,@deepseek-ai/dsh,observed,installed,0.1.0-rc.6,npm global
+step0.1-p2,,,npm-global,corepack,observed,installed,0.35.0,npm global
+step0.1-p2,,,npm-global,npm,observed,installed,11.17.0,npm global
+step0.1-p2,,,npm-global,pnpm,observed,installed,11.21.0,npm global

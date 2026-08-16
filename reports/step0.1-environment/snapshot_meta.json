@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-08-16T18:43:47+00:00",
+  "repo_root": "/home/andyk/projects/dsh-bash-all",
+  "uname": "Linux DESKTOP-A2R3K6E 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun 5 18:30:46 UTC 2025 x86_64 GNU/Linux",
+  "user": "andyk",
+  "shell": "/bin/bash",
+  "python": "3.14.4 (main, Jun 18 2026, 14:25:02) [GCC 15.2.0]",
+  "python_executable": "/usr/bin/python3",
+  "bash": "GNU bash, version 5.3.9(1)-release (x86_64-pc-linux-gnu)",
+  "apt_installed_count": 1244,
+  "pip_package_count": 116,
+  "pip_user_site": "/home/andyk/.local/lib/python3.14/site-packages",
+  "pip_user_site_exists": false,
+  "system_purelib": "/usr/local/lib/python3.14/dist-packages",
+  "system_purelib_writable": false,
+  "home_local_exists": true,
+  "home_local_mode": "0o755",
+  "home_local_writable": false,
+  "sudo_noninteractive_available": false,
+  "node": "v24.19.0",
+  "npm": "11.17.0",
+  "pnpm": "11.21.0",
+  "cjk_font_count": 31,
+  "tesseract_langs": [
+    "eng",
+    "osd"
+  ],
+  "bash_binary": "/usr/bin/bash"
+}
