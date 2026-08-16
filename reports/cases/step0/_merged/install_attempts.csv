@@ -1,0 +1,4 @@
+session_id,source_file,package_manager,count
+session-case-05,logs/cases/step0/session-case-05.jsonl,pip,2
+session-case-07,logs/cases/step0/session-case-07.jsonl,pip,2
+session-case-11,logs/cases/step0/session-case-11.jsonl,pip,3

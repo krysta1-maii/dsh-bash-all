@@ -1,0 +1,2 @@
+session_id,source_file,tool,count
+session-case-12,logs/cases/step0/session-case-12.jsonl,bash,11

@@ -1,0 +1,6 @@
+session_id,source_file,raw_packages,count
+session-case-05,logs/cases/step0/session-case-05.jsonl,--break-system-packages scipy --quiet 2>,1
+session-case-05,logs/cases/step0/session-case-05.jsonl,scipy --quiet 2>,1
+session-case-07,logs/cases/step0/session-case-07.jsonl,matplotlib --quiet 2>,2
+session-case-11,logs/cases/step0/session-case-11.jsonl,--quiet pypandoc-binary pypdf weasyprint,2
+session-case-11,logs/cases/step0/session-case-11.jsonl,--user --quiet pypandoc-binary pypdf weasyprint,1

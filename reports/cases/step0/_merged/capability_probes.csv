@@ -1,0 +1,14 @@
+session_id,source_file,probe,count
+session-case-07,logs/cases/step0/session-case-07.jsonl,chafa,1
+session-case-07,logs/cases/step0/session-case-07.jsonl,img2txt,1
+session-case-07,logs/cases/step0/session-case-07.jsonl,jp2,1
+session-case-07,logs/cases/step0/session-case-07.jsonl,viu,1
+session-case-11,logs/cases/step0/session-case-11.jsonl,libreoffice,1
+session-case-11,logs/cases/step0/session-case-11.jsonl,pandoc,1
+session-case-11,logs/cases/step0/session-case-11.jsonl,pdfimages,1
+session-case-11,logs/cases/step0/session-case-11.jsonl,pdfinfo,1
+session-case-11,logs/cases/step0/session-case-11.jsonl,pdflatex,1
+session-case-11,logs/cases/step0/session-case-11.jsonl,pdftotext,1
+session-case-11,logs/cases/step0/session-case-11.jsonl,weasyprint,1
+session-case-11,logs/cases/step0/session-case-11.jsonl,wkhtmltopdf,1
+session-case-11,logs/cases/step0/session-case-11.jsonl,xelatex,1

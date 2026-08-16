@@ -1,0 +1,6 @@
+session_id,source_file,module,count
+session-case-08,logs/cases/step0/session-case-08.jsonl,PIL,1
+session-case-08,logs/cases/step0/session-case-08.jsonl,pathlib,1
+session-case-08,logs/cases/step0/session-case-08.jsonl,struct,1
+session-case-08,logs/cases/step0/session-case-08.jsonl,sys,2
+session-case-08,logs/cases/step0/session-case-08.jsonl,verify,1

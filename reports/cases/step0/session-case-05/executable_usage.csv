@@ -1,0 +1,13 @@
+session_id,source_file,executable,count
+session-case-05,logs/cases/step0/session-case-05.jsonl,cat,5
+session-case-05,logs/cases/step0/session-case-05.jsonl,echo,3
+session-case-05,logs/cases/step0/session-case-05.jsonl,find,1
+session-case-05,logs/cases/step0/session-case-05.jsonl,git,3
+session-case-05,logs/cases/step0/session-case-05.jsonl,head,2
+session-case-05,logs/cases/step0/session-case-05.jsonl,ls,1
+session-case-05,logs/cases/step0/session-case-05.jsonl,pip,1
+session-case-05,logs/cases/step0/session-case-05.jsonl,pwd,1
+session-case-05,logs/cases/step0/session-case-05.jsonl,python,4
+session-case-05,logs/cases/step0/session-case-05.jsonl,python3,12
+session-case-05,logs/cases/step0/session-case-05.jsonl,sed,1
+session-case-05,logs/cases/step0/session-case-05.jsonl,tail,3

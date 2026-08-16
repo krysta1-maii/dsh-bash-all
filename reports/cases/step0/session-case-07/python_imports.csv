@@ -1,0 +1,12 @@
+session_id,source_file,module,count
+session-case-07,logs/cases/step0/session-case-07.jsonl,PIL,4
+session-case-07,logs/cases/step0/session-case-07.jsonl,__future__,1
+session-case-07,logs/cases/step0/session-case-07.jsonl,collections,3
+session-case-07,logs/cases/step0/session-case-07.jsonl,csv,3
+session-case-07,logs/cases/step0/session-case-07.jsonl,datetime,3
+session-case-07,logs/cases/step0/session-case-07.jsonl,json,1
+session-case-07,logs/cases/step0/session-case-07.jsonl,math,2
+session-case-07,logs/cases/step0/session-case-07.jsonl,matplotlib,2
+session-case-07,logs/cases/step0/session-case-07.jsonl,pathlib,2
+session-case-07,logs/cases/step0/session-case-07.jsonl,subprocess,1
+session-case-07,logs/cases/step0/session-case-07.jsonl,sys,1

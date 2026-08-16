@@ -1,0 +1,4 @@
+session_id,source_file,module,count
+session-case-04,logs/cases/step0/session-case-04.jsonl,csv,1
+session-case-04,logs/cases/step0/session-case-04.jsonl,decimal,1
+session-case-04,logs/cases/step0/session-case-04.jsonl,pathlib,1

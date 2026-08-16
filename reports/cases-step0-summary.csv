@@ -1,0 +1,13 @@
+case,task,in_session_result,bash_calls,messages,primary_choice,missing_signals,fallback_or_note,detail
+C01,JSON 解析,PASS,5,12,python3 + json/decimal,无,未使用 jq,Python 标准库直接完成，未尝试 jq
+C02,文件查找,PASS,5,11,python3 + pathlib/json,无,未使用 fd；只用 find 做初览,Python 遍历判断 .py 与 TODO
+C03,压缩包处理,PASS,5,12,python3 + zipfile/pathlib,无,未使用 unzip,Python 解压并生成清单
+C04,CSV 统计,PASS,7,14,python3 + csv/Decimal,无,未使用 pandas/awk,Decimal 精确输出两列结果
+C05,数值求解,PASS,17,36,python3 + numpy；scipy 补装后使用,scipy ×1,先手写 numpy 求解，后 pip/venv 补 scipy,pip 系统安装失败，最终 /tmp venv 成功
+C06,符号计算,PASS,4,10,python3 标准库 + importlib,无,未尝试 sympy,直接生成等价表达式与判定结果
+C07,图表生成,PASS,18,38,Pillow 手绘 PNG；chafa 查看,"matplotlib ×2, pandas ×1",优先探测 matplotlib/pandas，最终 Pillow 兜底,尝试 pip 和 venv；chafa 被实际使用 3 次
+C08,图像处理,PASS,7,16,python3 + PIL,无,未使用 convert/identify,精确通过像素级验证 MAE=0
+C09,测试诊断,PASS,11,23,先 pytest，再 unittest,"python cmd ×1, pytest ×1",默认想用 pytest，缺失后回退 unittest,报告通过，未修改源码
+C10,C/C++ 构建,PASS,7,15,make,无,未使用 cmake/ninja,直接 make && make run
+C11,文档转换,PASS*,51,103,pypandoc-binary + weasyprint + apt 下载 poppler 到 /tmp,pdfinfo ×1,首选 pandoc 系；系统包缺失时用 /tmp 自建依赖,会话内 verifier PASS；依赖在 /tmp 不持久，现目录重跑 FAIL
+C12,本地 HTTP + JSON,PASS,11,24,python3 + urllib.request,无,未使用 curl/jq/requests,实现完整分页抓取与聚合验证

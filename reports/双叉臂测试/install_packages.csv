@@ -1,0 +1,5 @@
+session_id,source_file,raw_packages,count
+双叉臂测试,logs/双叉臂测试.jsonl,-y chafa >/dev/null 2>,1
+双叉臂测试,logs/双叉臂测试.jsonl,-y python3-pil 2>,1
+双叉臂测试,logs/双叉臂测试.jsonl,-y python3-pil >/dev/null 2>,1
+双叉臂测试,logs/双叉臂测试.jsonl,pillow -q 2>,2

@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+
+# Windows Zone.Identifier sidecar files
+*:Zone.Identifier

@@ -1,0 +1,3 @@
+session_id,source_file,missing_command,count
+session-case-09,logs/cases/step0/session-case-09.jsonl,python,1
+session-case-11,logs/cases/step0/session-case-11.jsonl,pdfinfo,1

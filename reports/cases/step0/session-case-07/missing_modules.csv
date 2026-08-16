@@ -1,0 +1,3 @@
+session_id,source_file,missing_module,count
+session-case-07,logs/cases/step0/session-case-07.jsonl,matplotlib,2
+session-case-07,logs/cases/step0/session-case-07.jsonl,pandas,1

@@ -1,0 +1,7 @@
+session_id,source_file,module,count
+session-case-11,logs/cases/step0/session-case-11.jsonl,importlib.util,1
+session-case-11,logs/cases/step0/session-case-11.jsonl,pathlib,6
+session-case-11,logs/cases/step0/session-case-11.jsonl,pypandoc,3
+session-case-11,logs/cases/step0/session-case-11.jsonl,re,2
+session-case-11,logs/cases/step0/session-case-11.jsonl,subprocess,1
+session-case-11,logs/cases/step0/session-case-11.jsonl,weasyprint,1

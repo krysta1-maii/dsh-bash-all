@@ -1,0 +1,13 @@
+session_id,source_file,tool,count
+session-case-01,logs/cases/step0/session-case-01.jsonl,bash,5
+session-case-02,logs/cases/step0/session-case-02.jsonl,bash,5
+session-case-03,logs/cases/step0/session-case-03.jsonl,bash,5
+session-case-04,logs/cases/step0/session-case-04.jsonl,bash,7
+session-case-05,logs/cases/step0/session-case-05.jsonl,bash,17
+session-case-06,logs/cases/step0/session-case-06.jsonl,bash,4
+session-case-07,logs/cases/step0/session-case-07.jsonl,bash,18
+session-case-08,logs/cases/step0/session-case-08.jsonl,bash,7
+session-case-09,logs/cases/step0/session-case-09.jsonl,bash,11
+session-case-10,logs/cases/step0/session-case-10.jsonl,bash,7
+session-case-11,logs/cases/step0/session-case-11.jsonl,bash,51
+session-case-12,logs/cases/step0/session-case-12.jsonl,bash,11
