@@ -1,0 +1,511 @@
+{
+  "generated_at": "2026-08-16T08:15:22.493043+00:00",
+  "files": 22,
+  "valid_json_lines": 43540,
+  "invalid_json_lines": 0,
+  "sessions": 22,
+  "models": {
+    "deepseek-v4-pro": 21,
+    "deepseek-v4-flash": 1
+  },
+  "interfaces": {
+    "bash,str_replace_editor": 20,
+    "bash,str_replace_editor,vision_toolkit_activate": 2
+  },
+  "protocol": {
+    "formal_calls": 658,
+    "formal_results": 658,
+    "matched_call_results": 658,
+    "transport_errors_by_tool": {
+      "str_replace_editor": 5,
+      "vision_toolkit_activate": 2
+    },
+    "nonzero_bash_results": 44,
+    "nonzero_bash_exit_codes": {
+      "1": 34,
+      "2": 6,
+      "127": 2,
+      "8": 1,
+      "126": 1
+    },
+    "nonzero_bash_by_source": {
+      "logs\\cases\\step0\\session-case-01.jsonl": 1,
+      "logs\\cases\\step0\\session-case-05.jsonl": 1,
+      "logs\\cases\\step0\\session-case-07.jsonl": 1,
+      "logs\\cases\\step0\\session-case-11.jsonl": 5,
+      "logs\\cases\\step0\\session-case-12.jsonl": 1,
+      "logs\\cases\\step0-vibe\\session-vibe-01.jsonl": 3,
+      "logs\\cases\\step0-vibe\\session-vibe-02.jsonl": 11,
+      "logs\\cases\\step0-vibe\\session-vibe-04.jsonl": 1,
+      "logs\\cases\\step0-vibe\\session-vibe-06.jsonl": 3,
+      "logs\\cases\\step0-vibe\\session-vibe-07.jsonl": 1,
+      "logs\\cases\\step0-vibe\\session-vibe-08.jsonl": 3,
+      "logs\\双叉臂测试-step0.jsonl": 6,
+      "logs\\双叉臂测试.jsonl": 7
+    }
+  },
+  "tool_calls": 658,
+  "bash_calls": 650,
+  "bash_share": 0.9878,
+  "bash_calls_median": 18.5,
+  "bash_calls_mean": 29.55,
+  "bash_calls_min": 4,
+  "bash_calls_max": 110,
+  "top5_bash_call_share": 0.6,
+  "first_call_inspection_sessions": 21,
+  "sessions_with_detected_write": 22,
+  "read_before_write_sessions": 21,
+  "post_write_validation_sessions": 22,
+  "sessions_with_missing_signals": 13,
+  "sessions_with_install_attempts": 9,
+  "total_missing_signals": 36,
+  "total_install_attempts": 29,
+  "install_managers": {
+    "pip": 23,
+    "apt": 6
+  },
+  "install_outcomes": {
+    "global_or_user_pip_failure": 13,
+    "apt_install_failure": 6,
+    "isolated_pip_success": 10
+  },
+  "tmp_path_calls": 213,
+  "tmp_path_sessions": 14,
+  "tool_usage": [
+    {
+      "tool": "bash",
+      "calls": 650,
+      "sessions": 22,
+      "call_share": 0.9878
+    },
+    {
+      "tool": "str_replace_editor",
+      "calls": 6,
+      "sessions": 2,
+      "call_share": 0.0091
+    },
+    {
+      "tool": "vision_toolkit_activate",
+      "calls": 2,
+      "sessions": 2,
+      "call_share": 0.003
+    }
+  ],
+  "top_executables": [
+    {
+      "executable": "python3",
+      "calls": 384,
+      "sessions": 22,
+      "session_share": 1.0
+    },
+    {
+      "executable": "cat",
+      "calls": 150,
+      "sessions": 22,
+      "session_share": 1.0
+    },
+    {
+      "executable": "ls",
+      "calls": 127,
+      "sessions": 22,
+      "session_share": 1.0
+    },
+    {
+      "executable": "echo",
+      "calls": 196,
+      "sessions": 21,
+      "session_share": 0.9545
+    },
+    {
+      "executable": "sed",
+      "calls": 96,
+      "sessions": 21,
+      "session_share": 0.9545
+    },
+    {
+      "executable": "pwd",
+      "calls": 36,
+      "sessions": 21,
+      "session_share": 0.9545
+    },
+    {
+      "executable": "head",
+      "calls": 133,
+      "sessions": 20,
+      "session_share": 0.9091
+    },
+    {
+      "executable": "find",
+      "calls": 59,
+      "sessions": 20,
+      "session_share": 0.9091
+    },
+    {
+      "executable": "sort",
+      "calls": 42,
+      "sessions": 18,
+      "session_share": 0.8182
+    },
+    {
+      "executable": "tail",
+      "calls": 58,
+      "sessions": 14,
+      "session_share": 0.6364
+    },
+    {
+      "executable": "true",
+      "calls": 87,
+      "sessions": 13,
+      "session_share": 0.5909
+    },
+    {
+      "executable": "cd",
+      "calls": 198,
+      "sessions": 12,
+      "session_share": 0.5455
+    },
+    {
+      "executable": "wc",
+      "calls": 23,
+      "sessions": 12,
+      "session_share": 0.5455
+    },
+    {
+      "executable": "pip",
+      "calls": 21,
+      "sessions": 12,
+      "session_share": 0.5455
+    },
+    {
+      "executable": "grep",
+      "calls": 70,
+      "sessions": 10,
+      "session_share": 0.4545
+    },
+    {
+      "executable": "git",
+      "calls": 31,
+      "sessions": 10,
+      "session_share": 0.4545
+    },
+    {
+      "executable": "rm",
+      "calls": 58,
+      "sessions": 9,
+      "session_share": 0.4091
+    },
+    {
+      "executable": "which",
+      "calls": 26,
+      "sessions": 8,
+      "session_share": 0.3636
+    },
+    {
+      "executable": "python",
+      "calls": 47,
+      "sessions": 6,
+      "session_share": 0.2727
+    },
+    {
+      "executable": "mkdir",
+      "calls": 30,
+      "sessions": 6,
+      "session_share": 0.2727
+    },
+    {
+      "executable": "chmod",
+      "calls": 7,
+      "sessions": 6,
+      "session_share": 0.2727
+    },
+    {
+      "executable": "file",
+      "calls": 6,
+      "sessions": 6,
+      "session_share": 0.2727
+    },
+    {
+      "executable": "google-chrome",
+      "calls": 41,
+      "sessions": 5,
+      "session_share": 0.2273
+    },
+    {
+      "executable": "apt-get",
+      "calls": 17,
+      "sessions": 4,
+      "session_share": 0.1818
+    },
+    {
+      "executable": "timeout",
+      "calls": 15,
+      "sessions": 4,
+      "session_share": 0.1818
+    },
+    {
+      "executable": "node",
+      "calls": 48,
+      "sessions": 3,
+      "session_share": 0.1364
+    },
+    {
+      "executable": "sleep",
+      "calls": 34,
+      "sessions": 3,
+      "session_share": 0.1364
+    },
+    {
+      "executable": "kill",
+      "calls": 15,
+      "sessions": 3,
+      "session_share": 0.1364
+    },
+    {
+      "executable": "tesseract",
+      "calls": 14,
+      "sessions": 3,
+      "session_share": 0.1364
+    },
+    {
+      "executable": "chafa",
+      "calls": 11,
+      "sessions": 3,
+      "session_share": 0.1364
+    }
+  ],
+  "command_features": [
+    {
+      "feature": "复合调用（≥2 个命令段）",
+      "calls": 478,
+      "call_share": 0.7354,
+      "sessions": 22,
+      "session_share": 1.0
+    },
+    {
+      "feature": "重定向 / heredoc",
+      "calls": 459,
+      "call_share": 0.7062,
+      "sessions": 21,
+      "session_share": 0.9545
+    },
+    {
+      "feature": "Python 执行",
+      "calls": 361,
+      "call_share": 0.5554,
+      "sessions": 22,
+      "session_share": 1.0
+    },
+    {
+      "feature": "条件链（&& / ||）",
+      "calls": 317,
+      "call_share": 0.4877,
+      "sessions": 22,
+      "session_share": 1.0
+    },
+    {
+      "feature": "内联 Python heredoc",
+      "calls": 291,
+      "call_share": 0.4477,
+      "sessions": 20,
+      "session_share": 0.9091
+    },
+    {
+      "feature": "显式验证 / 视觉检查",
+      "calls": 216,
+      "call_share": 0.3323,
+      "sessions": 22,
+      "session_share": 1.0
+    },
+    {
+      "feature": "通过 Bash 写/改文件",
+      "calls": 207,
+      "call_share": 0.3185,
+      "sessions": 22,
+      "session_share": 1.0
+    },
+    {
+      "feature": "管道（|）",
+      "calls": 188,
+      "call_share": 0.2892,
+      "sessions": 22,
+      "session_share": 1.0
+    },
+    {
+      "feature": "依赖恢复",
+      "calls": 81,
+      "call_share": 0.1246,
+      "sessions": 9,
+      "session_share": 0.4091
+    },
+    {
+      "feature": "进程 / 服务编排",
+      "calls": 56,
+      "call_share": 0.0862,
+      "sessions": 7,
+      "session_share": 0.3182
+    },
+    {
+      "feature": "能力探测",
+      "calls": 25,
+      "call_share": 0.0385,
+      "sessions": 10,
+      "session_share": 0.4545
+    }
+  ],
+  "write_methods": [
+    {
+      "method": "Shell 输出重定向",
+      "calls": 94,
+      "sessions": 13
+    },
+    {
+      "method": "Python 文件 API",
+      "calls": 88,
+      "sessions": 18
+    },
+    {
+      "method": "文件系统命令",
+      "calls": 71,
+      "sessions": 12
+    },
+    {
+      "method": "cat + heredoc",
+      "calls": 33,
+      "sessions": 13
+    },
+    {
+      "method": "构建 / 生成命令",
+      "calls": 18,
+      "sessions": 3
+    },
+    {
+      "method": "echo/printf 重定向",
+      "calls": 5,
+      "sessions": 2
+    },
+    {
+      "method": "tee 写入",
+      "calls": 4,
+      "sessions": 2
+    }
+  ],
+  "groups": [
+    {
+      "group": "Step 0 · vibe 项目",
+      "sessions": 8,
+      "bash_calls": 328,
+      "median_bash_calls": 27.0,
+      "probe_events": 39,
+      "missing_signals": 22,
+      "install_attempts": 14,
+      "nonzero_bash_results": 22,
+      "nonzero_bash_rate": 0.0671,
+      "editor_calls": 6
+    },
+    {
+      "group": "Step 0 · 12 用例",
+      "sessions": 12,
+      "bash_calls": 148,
+      "median_bash_calls": 7.0,
+      "probe_events": 13,
+      "missing_signals": 7,
+      "install_attempts": 7,
+      "nonzero_bash_results": 9,
+      "nonzero_bash_rate": 0.0608,
+      "editor_calls": 0
+    },
+    {
+      "group": "双叉臂 · Step 0",
+      "sessions": 1,
+      "bash_calls": 105,
+      "median_bash_calls": 105,
+      "probe_events": 8,
+      "missing_signals": 1,
+      "install_attempts": 3,
+      "nonzero_bash_results": 6,
+      "nonzero_bash_rate": 0.0571,
+      "editor_calls": 0
+    },
+    {
+      "group": "双叉臂 · baseline",
+      "sessions": 1,
+      "bash_calls": 69,
+      "median_bash_calls": 69,
+      "probe_events": 13,
+      "missing_signals": 6,
+      "install_attempts": 5,
+      "nonzero_bash_results": 7,
+      "nonzero_bash_rate": 0.1014,
+      "editor_calls": 0
+    }
+  ],
+  "ab_comparison": [
+    {
+      "metric": "Bash 调用",
+      "baseline": 69,
+      "step0": 105,
+      "change": "+52.2%"
+    },
+    {
+      "metric": "最终非零 Bash",
+      "baseline": 7,
+      "step0": 6,
+      "change": "-1"
+    },
+    {
+      "metric": "主动探测目标",
+      "baseline": 13,
+      "step0": 8,
+      "change": "-38.5%"
+    },
+    {
+      "metric": "缺失信号",
+      "baseline": 6,
+      "step0": 1,
+      "change": "-83.3%"
+    },
+    {
+      "metric": "安装尝试",
+      "baseline": 5,
+      "step0": 3,
+      "change": "-40.0%"
+    }
+  ],
+  "step01_package_bundles": [
+    {
+      "priority": "P0",
+      "domain": "Python 入口、测试与轻量胶水",
+      "delivery": "默认 core",
+      "apt_packages": "python-is-python3; python3-venv; python3-pytest; python3-websocket; zip; unzip; pngcheck",
+      "evidence": "python3 覆盖 22/22；python 别名缺 2 次；pytest 缺 3 次；CDP websocket 曾运行时自装"
+    },
+    {
+      "priority": "P0",
+      "domain": "文档、PDF 与字体",
+      "delivery": "docs profile；单镜像时纳入",
+      "apt_packages": "pandoc; poppler-utils; poppler-data; ghostscript; fontconfig; fonts-noto-cjk; python3-reportlab; python3-pymupdf; python3-svglib; python3-fonttools; weasyprint",
+      "evidence": "P2+C11 共 161/650 次 Bash；缺 pandoc/pdfinfo/reportlab/fontTools/rlPyCairo，并出现 /tmp poppler 自举"
+    },
+    {
+      "priority": "P0",
+      "domain": "原生构建与发布",
+      "delivery": "build profile；单镜像时纳入",
+      "apt_packages": "build-essential; cmake; ninja-build; pkgconf",
+      "evidence": "P8 共 55 次 Bash；缺 cmake/ctest/zip/unzip，并通过 apt-download/dpkg-deb 自建工具链"
+    },
+    {
+      "priority": "P1",
+      "domain": "科学计算、数据与绘图",
+      "delivery": "data profile；按任务挂载",
+      "apt_packages": "python3-scipy; python3-matplotlib; python3-pandas",
+      "evidence": "scipy 缺 1 次；matplotlib 缺 3 次/2 会话；pandas 缺 2 次/2 会话；存在 stdlib/Pillow 回退"
+    },
+    {
+      "priority": "P2",
+      "domain": "通用 CLI、浏览器框架、CV 与 Web 框架",
+      "delivery": "先实验或暂缓",
+      "apt_packages": "不新增；另设 browser/docs-heavy profile 时再评估",
+      "evidence": "rg/jq/fd/awk/curl/wget 全部 0 次；Playwright/OpenCV/Flask/FastAPI/Uvicorn 只是零星探测且均有现成回退"
+    }
+  ]
+}

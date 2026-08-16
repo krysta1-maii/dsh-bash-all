@@ -1,0 +1,8 @@
+method,calls,sessions
+Shell 输出重定向,94,13
+Python 文件 API,88,18
+文件系统命令,71,12
+cat + heredoc,33,13
+构建 / 生成命令,18,3
+echo/printf 重定向,5,2
+tee 写入,4,2

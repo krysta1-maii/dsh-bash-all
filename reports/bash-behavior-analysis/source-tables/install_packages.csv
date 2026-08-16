@@ -1,0 +1,27 @@
+session_id,source_file,raw_packages,count
+session-vibe-02,logs\cases\step0-vibe\session-vibe-02.jsonl,--user reportlab markdown beautifulsoup4 2>,1
+session-vibe-02,logs\cases\step0-vibe\session-vibe-02.jsonl,-q fonttools 2>,1
+session-vibe-02,logs\cases\step0-vibe\session-vibe-02.jsonl,-q pymupdf 2>,1
+session-vibe-02,logs\cases\step0-vibe\session-vibe-02.jsonl,-y -qq python3-reportlab >/tmp/apt.log 2>,1
+session-vibe-02,logs\cases\step0-vibe\session-vibe-02.jsonl,reportlab markdown beautifulsoup4 2>,2
+session-vibe-02,logs\cases\step0-vibe\session-vibe-02.jsonl,"reportlab"")",1
+session-vibe-02,logs\cases\step0-vibe\session-vibe-02.jsonl,"reportlab"")\n\n    if not _venv_python().exists():\n        print(""[build] 创建虚拟环境 .build-venv ..."", file=sys.stderr)\n        subprocess.check_call([sys.executable, ""-m"", ""venv"", str(VENV_DIR)])\n\n    print(""[build] 安装依赖：reportlab ..."", file=sys.stderr)\n    subprocess.check_call(\n        [_venv_pip(), ""install"", ""-q"", ""reportlab>=4.0""]\n    )\n    os.execv(str(_venv_python()), [str(_venv_python()), str(__file__), *sys.argv[1:]])\n'''",1
+session-vibe-02,logs\cases\step0-vibe\session-vibe-02.jsonl,"reportlab"")\n\n    venv_python = _venv_python()\n    venv_ready = False\n    if venv_python.exists():\n        probe = subprocess.run(\n            [venv_python, ""-c"", ""import reportlab""],\n            stdout=subprocess.DEVNULL,\n            stderr=subprocess.DEVNULL,\n        )\n        venv_ready = probe.returncode == 0\n\n    if not venv_ready:\n        if not venv_python.exists():\n            print(""[build] 创建虚拟环境 .build-venv ..."", file=sys.stderr)\n            subprocess.check_call([sys.executable, ""-m"", ""venv"", str(VENV_DIR)])\n        print(""[build] 安装依赖：reportlab ..."", file=sys.stderr)\n        subprocess.check_call([_venv_pip(), ""install"", ""-q"", ""reportlab>=4.0""])\n\n    os.execv(str(venv_python), [str(venv_python), str(__file__), *sys.argv[1:]])\n'''",1
+session-vibe-02,logs\cases\step0-vibe\session-vibe-02.jsonl,svglib 2>,1
+session-vibe-03,logs\cases\step0-vibe\session-vibe-03.jsonl,pytest --quiet 2>,2
+session-vibe-05,logs\cases\step0-vibe\session-vibe-05.jsonl,websocket-client -q >/tmp/pip.log 2>,1
+session-vibe-08,logs\cases\step0-vibe\session-vibe-08.jsonl,--user --break-system-packages -q cmake 2>,1
+session-vibe-08,logs\cases\step0-vibe\session-vibe-08.jsonl,--user -q cmake 2>,1
+session-vibe-08,logs\cases\step0-vibe\session-vibe-08.jsonl,-y -qq cmake >/tmp/apt-cmake.log 2>,2
+session-case-05,logs\cases\step0\session-case-05.jsonl,--break-system-packages scipy --quiet 2>,1
+session-case-05,logs\cases\step0\session-case-05.jsonl,scipy --quiet 2>,1
+session-case-07,logs\cases\step0\session-case-07.jsonl,matplotlib --quiet 2>,2
+session-case-11,logs\cases\step0\session-case-11.jsonl,--quiet pypandoc-binary pypdf weasyprint,2
+session-case-11,logs\cases\step0\session-case-11.jsonl,--user --quiet pypandoc-binary pypdf weasyprint,1
+双叉臂测试-step0,logs\双叉臂测试-step0.jsonl,websocket-client -q --break-system-packages 2>,1
+双叉臂测试-step0,logs\双叉臂测试-step0.jsonl,websocket-client -q --target /tmp/ws --break-system-packages 2>,1
+双叉臂测试-step0,logs\双叉臂测试-step0.jsonl,websocket-client -q 2>,1
+双叉臂测试,logs\双叉臂测试.jsonl,-y chafa >/dev/null 2>,1
+双叉臂测试,logs\双叉臂测试.jsonl,-y python3-pil 2>,1
+双叉臂测试,logs\双叉臂测试.jsonl,-y python3-pil >/dev/null 2>,1
+双叉臂测试,logs\双叉臂测试.jsonl,pillow -q 2>,2

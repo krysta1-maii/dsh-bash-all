@@ -1,0 +1,5 @@
+group,sessions,bash_calls,median_bash_calls,probe_events,missing_signals,install_attempts,nonzero_bash_results,nonzero_bash_rate,editor_calls
+Step 0 · vibe 项目,8,328,27.0,39,22,14,22,0.0671,6
+Step 0 · 12 用例,12,148,7.0,13,7,7,9,0.0608,0
+双叉臂 · Step 0,1,105,105,8,1,3,6,0.0571,0
+双叉臂 · baseline,1,69,69,13,6,5,7,0.1014,0

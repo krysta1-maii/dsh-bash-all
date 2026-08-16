@@ -1,0 +1,1084 @@
+{
+  "surface": "report",
+  "manifest": {
+    "version": 1,
+    "surface": "report",
+    "title": "模型如何使用 Bash",
+    "description": "22 个 DSH 会话中的命令倾向、常用工具与可观察策略。",
+    "generatedAt": "2026-08-16T08:15:22.493043+00:00",
+    "charts": [
+      {
+        "id": "tool_mix_chart",
+        "title": "模型可见工具的实际调用",
+        "subtitle": "658 次正式 tool/call；按工具汇总",
+        "type": "bar",
+        "dataset": "tool_mix",
+        "sourceId": "tool_mix_query",
+        "encodings": {
+          "x": {
+            "field": "tool",
+            "type": "nominal",
+            "label": "工具"
+          },
+          "y": {
+            "field": "calls",
+            "type": "quantitative",
+            "label": "调用次数"
+          },
+          "tooltip": [
+            {
+              "field": "sessions",
+              "type": "quantitative",
+              "label": "覆盖会话"
+            },
+            {
+              "field": "call_share",
+              "type": "quantitative",
+              "label": "调用占比",
+              "format": "percent"
+            }
+          ]
+        },
+        "layout": "full"
+      },
+      {
+        "id": "executable_coverage_chart",
+        "title": "高覆盖率 Bash 可执行程序",
+        "subtitle": "按覆盖会话数排序；调用次数保留在提示信息中",
+        "type": "bar",
+        "dataset": "top_executable_coverage",
+        "sourceId": "executable_coverage_query",
+        "encodings": {
+          "x": {
+            "field": "executable",
+            "type": "nominal",
+            "label": "可执行程序"
+          },
+          "y": {
+            "field": "sessions",
+            "type": "quantitative",
+            "label": "覆盖会话数"
+          },
+          "tooltip": [
+            {
+              "field": "calls",
+              "type": "quantitative",
+              "label": "命令段计数"
+            },
+            {
+              "field": "session_share",
+              "type": "quantitative",
+              "label": "会话覆盖率",
+              "format": "percent"
+            }
+          ]
+        },
+        "layout": "full"
+      },
+      {
+        "id": "composition_chart",
+        "title": "Bash 调用的组合形态",
+        "subtitle": "分母为 650 次 Bash 调用；特征可重叠",
+        "type": "bar",
+        "dataset": "command_composition",
+        "sourceId": "command_composition_query",
+        "valueFormat": "percent",
+        "encodings": {
+          "x": {
+            "field": "display_feature",
+            "type": "nominal",
+            "label": "可观察特征"
+          },
+          "y": {
+            "field": "call_share",
+            "type": "quantitative",
+            "label": "Bash 调用占比",
+            "format": "percent"
+          },
+          "tooltip": [
+            {
+              "field": "feature",
+              "type": "nominal",
+              "label": "完整定义"
+            },
+            {
+              "field": "calls",
+              "type": "quantitative",
+              "label": "调用数"
+            },
+            {
+              "field": "sessions",
+              "type": "quantitative",
+              "label": "覆盖会话"
+            }
+          ]
+        },
+        "layout": "full"
+      },
+      {
+        "id": "cost_concentration_chart",
+        "title": "Bash 调用最多的 10 个会话",
+        "subtitle": "中位数 18.5 次；最高 110 次",
+        "type": "bar",
+        "dataset": "high_cost_sessions",
+        "sourceId": "high_cost_query",
+        "encodings": {
+          "x": {
+            "field": "task",
+            "type": "nominal",
+            "label": "会话 / 任务"
+          },
+          "y": {
+            "field": "bash_calls",
+            "type": "quantitative",
+            "label": "Bash 调用次数"
+          },
+          "tooltip": [
+            {
+              "field": "group",
+              "type": "nominal",
+              "label": "分组"
+            },
+            {
+              "field": "missing_signals",
+              "type": "quantitative",
+              "label": "缺失信号"
+            },
+            {
+              "field": "install_attempts",
+              "type": "quantitative",
+              "label": "安装尝试"
+            }
+          ]
+        },
+        "layout": "full"
+      }
+    ],
+    "tables": [
+      {
+        "id": "group_table",
+        "title": "日志分组与行为总量",
+        "subtitle": "四组任务规模不同，横向对比仅用于描述样本构成",
+        "dataset": "group_summary",
+        "sourceId": "group_summary_query",
+        "defaultSort": {
+          "field": "bash_calls",
+          "direction": "desc"
+        },
+        "columns": [
+          {
+            "field": "group",
+            "label": "分组",
+            "type": "text"
+          },
+          {
+            "field": "sessions",
+            "label": "会话"
+          },
+          {
+            "field": "bash_calls",
+            "label": "Bash 调用"
+          },
+          {
+            "field": "median_bash_calls",
+            "label": "会话中位数"
+          },
+          {
+            "field": "probe_events",
+            "label": "探测目标"
+          },
+          {
+            "field": "missing_signals",
+            "label": "缺失信号"
+          },
+          {
+            "field": "install_attempts",
+            "label": "安装尝试"
+          },
+          {
+            "field": "nonzero_bash_rate",
+            "label": "最终非零率",
+            "format": "percent"
+          }
+        ],
+        "layout": "full"
+      },
+      {
+        "id": "ab_table",
+        "title": "双叉臂任务：baseline 与 Step 0",
+        "subtitle": "同一提示词与模型；Step 0 增加 pip、Pillow、chafa、ImageMagick 与 tesseract",
+        "dataset": "ab_comparison",
+        "sourceId": "ab_comparison_query",
+        "defaultSort": {
+          "field": "metric",
+          "direction": "asc"
+        },
+        "columns": [
+          {
+            "field": "metric",
+            "label": "指标",
+            "type": "text"
+          },
+          {
+            "field": "baseline",
+            "label": "baseline"
+          },
+          {
+            "field": "step0",
+            "label": "Step 0"
+          },
+          {
+            "field": "change",
+            "label": "变化",
+            "type": "text"
+          }
+        ],
+        "layout": "full"
+      },
+      {
+        "id": "step01_package_table",
+        "title": "Step 0.1 包体分层决策",
+        "subtitle": "Ubuntu 26.04 apt 包名；优先级来自 22 个会话中的恢复成本、复用面与替代路径",
+        "dataset": "step01_package_bundles",
+        "sourceId": "step01_package_query",
+        "defaultSort": {
+          "field": "priority",
+          "direction": "asc"
+        },
+        "columns": [
+          {
+            "field": "priority",
+            "label": "优先级",
+            "type": "text"
+          },
+          {
+            "field": "domain",
+            "label": "领域",
+            "type": "text"
+          },
+          {
+            "field": "delivery",
+            "label": "交付层",
+            "type": "text"
+          },
+          {
+            "field": "apt_packages",
+            "label": "建议 apt 包",
+            "type": "text"
+          },
+          {
+            "field": "evidence",
+            "label": "日志证据",
+            "type": "text"
+          }
+        ],
+        "layout": "full"
+      }
+    ],
+    "sources": [
+      {
+        "id": "raw_logs",
+        "label": "22 份 DSH JSONL 对话导出",
+        "path": "logs"
+      },
+      {
+        "id": "behavior_metrics",
+        "label": "Bash 行为统计（由仓库解析器复算）",
+        "path": "reports/bash-behavior-analysis/behavior_metrics.json"
+      },
+      {
+        "id": "case_report",
+        "label": "12 用例现有汇总",
+        "path": "reports/cases-step0-summary.md"
+      },
+      {
+        "id": "vibe_report",
+        "label": "8 个 vibe 项目现有汇总",
+        "path": "reports/step0-vibe-summary.md"
+      },
+      {
+        "id": "ab_report",
+        "label": "双叉臂 baseline / Step 0 现有对比",
+        "path": "reports/step0-vs-baseline.md"
+      },
+      {
+        "id": "tool_mix_query",
+        "label": "Formal tool calls by tool",
+        "path": "reports/bash-behavior-analysis/tool_usage_summary.csv",
+        "query": {
+          "engine": "duckdb",
+          "language": "sql",
+          "description": "Formal tool calls by tool",
+          "sql": "SELECT tool, calls, sessions, call_share FROM read_csv_auto('reports/bash-behavior-analysis/tool_usage_summary.csv', header=true) ORDER BY calls DESC",
+          "executed_at": "2026-08-16T08:15:22.493043+00:00",
+          "tables_used": [
+            "reports/bash-behavior-analysis/tool_usage_summary.csv"
+          ]
+        }
+      },
+      {
+        "id": "executable_coverage_query",
+        "label": "Executable counts and session coverage",
+        "path": "reports/bash-behavior-analysis/executable_coverage.csv",
+        "query": {
+          "engine": "duckdb",
+          "language": "sql",
+          "description": "Executable counts and session coverage",
+          "sql": "SELECT executable, calls, sessions, session_share FROM read_csv_auto('reports/bash-behavior-analysis/executable_coverage.csv', header=true) ORDER BY sessions DESC, calls DESC LIMIT 12",
+          "executed_at": "2026-08-16T08:15:22.493043+00:00",
+          "tables_used": [
+            "reports/bash-behavior-analysis/executable_coverage.csv"
+          ]
+        }
+      },
+      {
+        "id": "command_composition_query",
+        "label": "Observable Bash composition features",
+        "path": "reports/bash-behavior-analysis/command_composition.csv",
+        "query": {
+          "engine": "duckdb",
+          "language": "sql",
+          "description": "Observable Bash composition features",
+          "sql": "SELECT feature, display_feature, calls, call_share, sessions, session_share FROM read_csv_auto('reports/bash-behavior-analysis/command_composition.csv', header=true) ORDER BY call_share DESC",
+          "executed_at": "2026-08-16T08:15:22.493043+00:00",
+          "tables_used": [
+            "reports/bash-behavior-analysis/command_composition.csv"
+          ]
+        }
+      },
+      {
+        "id": "high_cost_query",
+        "label": "Bash calls for the ten highest-cost sessions",
+        "path": "reports/bash-behavior-analysis/high_cost_sessions.csv",
+        "query": {
+          "engine": "duckdb",
+          "language": "sql",
+          "description": "Bash calls for the ten highest-cost sessions",
+          "sql": "SELECT task, bash_calls, \"group\", missing_signals, install_attempts FROM read_csv_auto('reports/bash-behavior-analysis/high_cost_sessions.csv', header=true) ORDER BY bash_calls DESC LIMIT 10",
+          "executed_at": "2026-08-16T08:15:22.493043+00:00",
+          "tables_used": [
+            "reports/bash-behavior-analysis/high_cost_sessions.csv"
+          ]
+        }
+      },
+      {
+        "id": "group_summary_query",
+        "label": "Log group behavior totals",
+        "path": "reports/bash-behavior-analysis/group_summary.csv",
+        "query": {
+          "engine": "duckdb",
+          "language": "sql",
+          "description": "Log group behavior totals",
+          "sql": "SELECT \"group\", sessions, bash_calls, median_bash_calls, probe_events, missing_signals, install_attempts, nonzero_bash_results, nonzero_bash_rate, editor_calls FROM read_csv_auto('reports/bash-behavior-analysis/group_summary.csv', header=true)",
+          "executed_at": "2026-08-16T08:15:22.493043+00:00",
+          "tables_used": [
+            "reports/bash-behavior-analysis/group_summary.csv"
+          ]
+        }
+      },
+      {
+        "id": "ab_comparison_query",
+        "label": "Double-wishbone baseline and Step 0 comparison",
+        "path": "reports/bash-behavior-analysis/ab_comparison.csv",
+        "query": {
+          "engine": "duckdb",
+          "language": "sql",
+          "description": "Double-wishbone baseline and Step 0 comparison",
+          "sql": "SELECT metric, baseline, step0, change FROM read_csv_auto('reports/bash-behavior-analysis/ab_comparison.csv', header=true)",
+          "executed_at": "2026-08-16T08:15:22.493043+00:00",
+          "tables_used": [
+            "reports/bash-behavior-analysis/ab_comparison.csv"
+          ]
+        }
+      },
+      {
+        "id": "step01_package_query",
+        "label": "Step 0.1 package-layer decision matrix",
+        "path": "reports/bash-behavior-analysis/step01_package_bundles.csv",
+        "query": {
+          "engine": "duckdb",
+          "language": "sql",
+          "description": "Step 0.1 package-layer decision matrix",
+          "sql": "SELECT priority, domain, delivery, apt_packages, evidence FROM read_csv_auto('reports/bash-behavior-analysis/step01_package_bundles.csv', header=true) ORDER BY priority, domain",
+          "executed_at": "2026-08-16T08:15:22.493043+00:00",
+          "tables_used": [
+            "reports/bash-behavior-analysis/step01_package_bundles.csv"
+          ]
+        }
+      },
+      {
+        "id": "ubuntu_resolute_packages",
+        "label": "Ubuntu 26.04 (Resolute) package index",
+        "href": "https://packages.ubuntu.com/resolute/"
+      },
+      {
+        "id": "pep668",
+        "label": "PEP 668: externally managed Python environments",
+        "href": "https://peps.python.org/pep-0668/"
+      },
+      {
+        "id": "python_venv",
+        "label": "Python venv documentation",
+        "href": "https://docs.python.org/3/library/venv.html"
+      }
+    ],
+    "blocks": [
+      {
+        "id": "title",
+        "type": "markdown",
+        "body": "# 模型如何使用 Bash",
+        "layout": "full"
+      },
+      {
+        "id": "executive_summary",
+        "type": "markdown",
+        "sourceId": "behavior_metrics",
+        "layout": "full",
+        "body": "## Executive Summary\n\n- **Bash 几乎就是唯一动作平面。** 22 个会话共有 658 次正式工具调用，其中 Bash 650 次（98.8%）；编辑器仅 6 次，视觉激活 2 次。\n- **Python 是 Bash 背后的默认能力层。** `python3` 出现在全部 22 个会话、共 384 个命令段；模型用 Shell 负责编排，再用 Python 标准库、NumPy、Pillow 等完成数据处理、生成与验证。\n- **可观察流程高度稳定：先看环境，再做事，再验证。** 21/22 个首个 Bash 调用包含目录或文件检查；在检测到写入的 22 个会话中，21 个先读后写，22 个在写入当次或之后出现显式测试或视觉/格式检查。\n- **Step 0.1 应做分层包体，而不是继续横向堆 CLI。** 13 个会话出现缺命令/缺模块信号，9 个尝试安装或自建环境；调用最多的 5 个会话占全部 Bash 调用的 60.0%。建议默认提供轻量 Core，并叠加 docs、build、data 领域层；若只能维护一个镜像，优先 Core + docs + build。"
+      },
+      {
+        "id": "scope",
+        "type": "markdown",
+        "sourceId": "raw_logs",
+        "layout": "full",
+        "body": "## 样本与口径\n\n本报告重新解析 `logs/` 中 22 份 JSONL，共 43,540 条有效 JSON、0 条坏行。样本包含 21 个 `deepseek-v4-pro` 会话和 1 个 `deepseek-v4-flash` 会话，均为 `max` reasoning effort。20 个 case/vibe 会话只暴露 `bash + str_replace_editor`；两次双叉臂会话还暴露 `vision_toolkit_activate`。\n\n只统计正式 `tool/call` / `tool/result`，跳过流式 chunk。一个 Bash 调用可包含多个由管道、分号或逻辑运算符连接的命令段，因此“可执行程序计数”不是工具调用数。以下结论描述这批任务上的可观察行为，不等同于模型在所有任务上的固有偏好。 安装统计会先屏蔽 heredoc 正文，避免把生成脚本中的 `pip install` 字符串当成真实执行；Python import 仍只是命令文本信号，不代表模块成功导入。"
+      },
+      {
+        "id": "group_table_block",
+        "type": "table",
+        "tableId": "group_table",
+        "layout": "full"
+      },
+      {
+        "id": "bash_dominance",
+        "type": "markdown",
+        "sourceId": "behavior_metrics",
+        "layout": "full",
+        "body": "## Bash 已成为事实上的统一 ABI\n\n**模型没有把编辑器当作主要编辑通道。** `str_replace_editor` 只在 2 个会话中出现 6 次：5 次因 schema、路径或 range 错误失败，唯一成功的一次只是 `view`，成功编辑为 0；两次视觉激活也都因 Skill 未加载而失败。真正的创建与修改通常由 `cat` heredoc、Python 文件 API、重定向或 `sed -i` 完成。Bash 因而同时承担发现、编辑、执行、验证和进程管理。\n\n这支持仓库的核心观察：在当前 harness 下，稳定的小工具面并没有限制任务覆盖；但也意味着 Shell 安全、输出约束和可写路径会直接影响几乎全部 Agent 行为。"
+      },
+      {
+        "id": "tool_mix_block",
+        "type": "chart",
+        "chartId": "tool_mix_chart",
+        "layout": "full"
+      },
+      {
+        "id": "python_default",
+        "type": "markdown",
+        "sourceId": "behavior_metrics",
+        "layout": "full",
+        "body": "## Shell 负责组合，Python 负责实现\n\n**覆盖率比原始次数更能说明默认偏好。** `python3`、`cat`、`ls` 覆盖全部 22 个会话；`echo`、`sed`、`pwd` 覆盖 21 个。高频导入是 `pathlib`（94）、`numpy`（85）、`PIL`（59）和 `json`（35）。\n\n12 个工具探测用例给出了更清楚的选择证据：JSON、压缩包、CSV、本地 HTTP、图像处理等任务普遍优先走 Python 标准库或 Pillow。放大到全部日志，`rg`、`jq`、`fd`、`awk`、`curl`、`wget` 均为 0；模型更常使用传统的 `find/sed/grep`。专用 CLI 仍会在合适处出现，例如 C++ 构建用 `make`，视觉兜底用 Chrome、tesseract、chafa。"
+      },
+      {
+        "id": "executable_coverage_block",
+        "type": "chart",
+        "chartId": "executable_coverage_chart",
+        "layout": "full"
+      },
+      {
+        "id": "composition",
+        "type": "markdown",
+        "sourceId": "behavior_metrics",
+        "layout": "full",
+        "body": "## 常见策略是把一次 Bash 调用写成一个小程序\n\n**模型倾向于在单次调用里完成“定位 → 过滤 → 限流”。** 常见形式是 `cd/pwd/ls/find` 与 `sed/sort/head` 的组合；复杂生成任务则使用 Python heredoc，把多步计算或文件生成封装在一次调用中。管道用于缩小 observation，`&&` 用于让后续步骤只在前一步成功后执行。\n\n这是一种高效的 Shell-native 策略，但也把风险集中到复合命令：一处引用、路径或依赖错误可能让整条链失败。因此运行时最好保留逐调用审计、输出截断和清晰退出码。"
+      },
+      {
+        "id": "composition_chart_block",
+        "type": "chart",
+        "chartId": "composition_chart",
+        "layout": "full"
+      },
+      {
+        "id": "recovery",
+        "type": "markdown",
+        "sourceId": "behavior_metrics",
+        "layout": "full",
+        "body": "## 依赖缺失时，模型先绕行，必要时再自建环境\n\n**两条恢复路线反复出现。** 结果文本记录了 44 次最终非零 Bash（13 个会话），另有 36 个缺命令/缺模块信号（13 个会话）；这些失败的 tool-result `isError` 仍为 false，模型主要依靠 stdout/stderr 和后续验证恢复。全部日志共有 29 条直接安装语句（23 条 pip、6 条 apt；旧口径因 heredoc 误报为 32）。若任务可用标准库或现有工具完成，模型通常直接降级：例如没有 matplotlib 时用 Pillow 画图，没有 pytest 时回退 unittest。若依赖难以绕开，则使用 `/tmp` venv、`pip --target /tmp`，甚至 `apt-get download + dpkg-deb` 解包用户态工具。\n\n严格复核显示 29 条直接安装中 10 条成功、19 条失败：13 次全局或 `--user` pip 全部失败，10 次 venv/`--target` 隔离安装全部成功，6 次 apt install 全部失败。`/tmp` 出现在 213/650 次 Bash 调用、14/22 个会话中。恢复能力很强，但 `/tmp` 不持久、`~/.local` 只读会制造重复成本。"
+      },
+      {
+        "id": "cost_chart_block",
+        "type": "chart",
+        "chartId": "cost_concentration_chart",
+        "layout": "full"
+      },
+      {
+        "id": "ab_finding",
+        "type": "markdown",
+        "sourceId": "behavior_metrics",
+        "layout": "full",
+        "body": "## 环境增强改变了策略，但没有自动缩短轨迹\n\n**唯一近似受控的同题对比是双叉臂任务。** Step 0 安装 pip、Pillow、chafa、ImageMagick 和 tesseract 后，模型自然采用 PIL/chafa/tesseract，主动探测、缺失信号和安装尝试都下降，最终非零 Bash 率也从 7/69（10.1%）降至 6/105（5.7%）；但 Bash 调用从 69 增至 105，主要伴随更多 NumPy 数值验证与视觉检查。\n\n因此更丰富的环境首先提升的是可选策略和验证深度，而不保证调用数下降。评估应把成功率、产物质量、恢复成本和验证质量与调用量一起看。"
+      },
+      {
+        "id": "ab_table_block",
+        "type": "table",
+        "tableId": "ab_table",
+        "layout": "full"
+      },
+      {
+        "id": "anti_patterns",
+        "type": "markdown",
+        "sourceId": "raw_logs",
+        "layout": "full",
+        "body": "## 有效策略之外，也出现了可重复的反模式\n\n- **持久 cwd 被重复假设为初始状态。** 多个 vibe 会话在已经 `cd repo` 后再次执行同一命令并报路径不存在，随后才改用 `pwd` 或绝对路径。\n- **过宽扫描代价很高。** P8 为找 `wish.md` 执行 `find /`，P2 为找字体再次扫根目录，均出现约 300 秒超时或资源问题。\n- **容错符号会掩盖局部失败。** `2>/dev/null`、`|| true`、管道加 `tail` 很常见；复合命令的最终退出码不一定代表每个子步骤成功。\n- **巨大 heredoc 降低可审查性。** 整文件覆盖减少往返，但小错误往往到运行阶段才暴露，也扩大了误覆盖范围。\n- **会话内恢复不等于可复现。** C11 与 P8 依赖 `/tmp` 中的 poppler/cmake；环境重置后需要重新构建。\n- **直接读取 verifier/evaluator 会污染成功指标。** 多数定向 case 在实现前读取 `.benchmark/verify.py`，部分 vibe 还读取 evaluator、spec 或 expected 数据；“全部通过”因此不能当作严格盲测结果。"
+      },
+      {
+        "id": "step01_answer",
+        "type": "markdown",
+        "sourceId": "behavior_metrics",
+        "layout": "full",
+        "body": "## Step 0.1：先装能终止自救循环的包\n\n**建议采用一个默认 Core，加 docs、build、data 三个可叠加领域层。** 默认 Core 解决 `python` 别名、pytest、Chrome CDP websocket、zip/unzip 与 PNG 完整性检查；docs 层补齐 PDF 生成、抽取、渲染和 CJK 字体；build 层补齐 CMake/CTest/CPack；data 层再提供 SciPy、Matplotlib 与 pandas。若只能维护一个镜像，优先组合 **Core + docs + build**，把 data 保持为按任务挂载。\n\n优先级来自恢复成本而非缺失次数本身：P2 与 C11 两个文档会话合计 161/650 次 Bash（24.8%），P8 构建发布任务有 55 次；而 29 条真实直接安装中，全局或 `--user` pip 13/13 失败、apt install 6/6 失败，隔离 venv/`--target` 10/10 成功。把高复用依赖在镜像构建期烘焙，比继续教模型运行时安装更可靠。"
+      },
+      {
+        "id": "step01_package_table_block",
+        "type": "table",
+        "tableId": "step01_package_table",
+        "layout": "full"
+      },
+      {
+        "id": "step01_deployment",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## Python 包应优先进入系统解释器\n\n**Ubuntu 26.04 上建议 apt-first。** 这批日志的模型在 22/22 个会话里直接调用普通 `python3`，因此 `python3-scipy`、`python3-reportlab` 这类发行版包会自然出现在默认解释器；只把包放进未激活的 `/opt` venv，模型仍可能看不到。Resolute 中 `pkg-config` 已是过渡包，新镜像应直接安装 `pkgconf`；`python3-websocket` 才是 PyPI `websocket-client` 对应的发行版包。可从 [Ubuntu 26.04 包索引](https://packages.ubuntu.com/resolute/) 复核。\n\n只有 apt 版本不满足或必须锁定 PyPI 版本时，才在最终固定路径创建 `/opt/dsh-venv`，将其 `bin` 放在 PATH 首位并做完整 import smoke test。继续保留 PEP 668 的 externally-managed 保护，不用 `--break-system-packages` 修改系统 Python；[PEP 668](https://peps.python.org/pep-0668/) 与 [Python venv 文档](https://docs.python.org/3/library/venv.html) 都支持这种分工。罕见运行时依赖应进入持久 workspace venv，而不是 `/tmp`。\n\n**体积与许可证是分层的主要原因。** Ubuntu 26.04 的 [Pandoc](https://packages.ubuntu.com/resolute/pandoc) 安装体约 202 MB、[Noto CJK 字体](https://packages.ubuntu.com/resolute/fonts-noto-cjk)约 91 MB，科学栈也会带入原生数值依赖；[`python3-pymupdf`](https://packages.ubuntu.com/resolute/python3-pymupdf) 还需通过 AGPL/商业双授权审查。docs/data 层应记录版本锁、SBOM、镜像增量和冷启动 smoke 结果。"
+      },
+      {
+        "id": "step01_holds",
+        "type": "markdown",
+        "sourceId": "behavior_metrics",
+        "layout": "full",
+        "body": "## 现在不要继续横向加包\n\n- **通用 CLI 先做采用实验。** `rg`、`jq`、`fd`、`awk`、`curl`、`wget` 在 22 个会话中均为 0；其中 Step 0 环境已声明具备 `rg/curl/wget`，说明安装本身不保证模型自然采用。把 `jq/fd` 纳入“是否安装 × 是否在环境清单中提示”的小型 A/B，再决定是否进 Core。\n- **暂缓 Playwright/Selenium 与浏览器下载体。** 现有 Chrome + CDP + websocket 已完成运行时和视觉验证；先补小型 `python3-websocket` 即可。\n- **暂缓 OpenCV、pytesseract 与 Web 框架。** Pillow + tesseract CLI、标准库 HTTP server 和 unittest 已覆盖当前任务，相关缺包只来自零星探测。\n- **重型办公栈单列。** LibreOffice、完整 TeX 与 wkhtmltopdf 只在领域探测中出现，可留给 `docs-heavy`，避免扩大默认镜像与文档解析攻击面。"
+      },
+      {
+        "id": "step01_rollout",
+        "type": "markdown",
+        "sourceId": "behavior_metrics",
+        "layout": "full",
+        "body": "## 用三臂重放决定哪些层晋级默认镜像\n\n对 C05、C07、C09、C11、P2、P8 和双叉臂任务，比较 **Step 0 → Step 0.1 Core → Core + 对应领域层**，固定模型、prompt、harness 与任务快照，并为每个条件做重复运行。主要判断标准应是：\n\n1. 受支持路径的运行时 apt/pip 安装是否归零；\n2. 冷容器是否无需 `/tmp` 依赖即可复现；\n3. 任务成功率、隐藏测试与产物质量是否不下降；\n4. 依赖探测、恢复调用、首次有效产物时间和下载字节是否下降；\n5. 每 100 MB 镜像增量换回多少恢复时间或调用。\n\n总 Bash 调用只能作为次级指标：现有唯一同题 A/B 中 Bash 从 69 增到 105，但最终非零率从 10.1% 降到 5.7%，说明丰富环境也可能把节省的成本转成更深验证。"
+      },
+      {
+        "id": "recommendations",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## 建议优先优化 Python 基座与恢复路径\n\n1. **把 Python 视为第一优先级。** 保证 `python3`、venv、pip、可写 wheel/cache/target 目录稳定；常用科学与视觉包应按任务域预装。\n2. **让能力发现便宜且按需。** 保留 `which`/`command -v` 和简短 help，但避免在首轮注入大型 CLI catalog。\n3. **提供持久、受控的用户工具目录。** 解决 `~/.local` 只读与 `/tmp` 易失问题，可显著减少重复安装和 wrapper 失败。\n4. **围绕 Bash 的真实用法做治理。** 重点覆盖复合命令、heredoc、大 stdout、后台进程、下载/安装与文件覆盖，而不只是单一可执行程序白名单。\n5. **不要用工具调用数单独评分。** 同时记录任务成功、验证深度、缺失恢复轮次、stdout 体积、时延与产物质量。"
+      },
+      {
+        "id": "further_questions",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## 还需要回答的问题\n\n- 对同一批任务补齐 baseline / enhanced、wish / spec 的完整交叉实验，区分环境与提示词效应。\n- 将唯一的 V4-Flash 会话改用 V4-Pro 重跑，消除模型混杂。\n- 进一步关联每条命令的退出码、时延与 stdout 体积，识别真正的重复调用和低收益探测。\n- 单独测量 Bash 写文件与 editor 写文件的正确率、修复轮次和安全事件，而不是只看采用率。"
+      },
+      {
+        "id": "caveats",
+        "type": "markdown",
+        "sourceId": "raw_logs",
+        "layout": "full",
+        "body": "## Caveats and assumptions\n\n这不是随机抽样：任务从短小工具探测到大型文档/仿真项目，难度差异很大；20 个会话处于 Step 0 环境，只有双叉臂具备 baseline 对照。C01 使用 V4-Flash，其余为 V4-Pro；双叉臂还多暴露一个视觉激活工具。双叉臂两次 request header 一致，但 baseline 的会话元数据曾从 anchored-standard 切到 minimal，Step 0 则从 minimal 开始。命令解析是 quote-aware 的近似 Shell 解析，heredoc 已屏蔽正文，但复杂嵌套语法仍可能有少量分类误差。旧版 `step0-environment.md` 中部分数字恰为正式事件口径的 3 倍，本报告没有使用这些陈旧值。结果文本中的 `[exit code: N]` 识别出 44/650 次最终非零 Bash，但 DSH 的 `isError` 对 650 个 Bash 结果全部为 false，因此不能把 transport 状态当成 Shell 成功率。策略判断只基于可观察的 tool/call、tool/result 与产物检查，不推断隐藏推理过程。"
+      }
+    ]
+  },
+  "snapshot": {
+    "version": 1,
+    "generatedAt": "2026-08-16T08:15:22.493043+00:00",
+    "status": "ready",
+    "datasets": {
+      "tool_mix": [
+        {
+          "tool": "bash",
+          "calls": 650,
+          "sessions": 22,
+          "call_share": 0.9878
+        },
+        {
+          "tool": "str_replace_editor",
+          "calls": 6,
+          "sessions": 2,
+          "call_share": 0.0091
+        },
+        {
+          "tool": "vision_toolkit_activate",
+          "calls": 2,
+          "sessions": 2,
+          "call_share": 0.003
+        }
+      ],
+      "top_executable_coverage": [
+        {
+          "executable": "python3",
+          "calls": 384,
+          "sessions": 22,
+          "session_share": 1.0
+        },
+        {
+          "executable": "cat",
+          "calls": 150,
+          "sessions": 22,
+          "session_share": 1.0
+        },
+        {
+          "executable": "ls",
+          "calls": 127,
+          "sessions": 22,
+          "session_share": 1.0
+        },
+        {
+          "executable": "echo",
+          "calls": 196,
+          "sessions": 21,
+          "session_share": 0.9545
+        },
+        {
+          "executable": "sed",
+          "calls": 96,
+          "sessions": 21,
+          "session_share": 0.9545
+        },
+        {
+          "executable": "pwd",
+          "calls": 36,
+          "sessions": 21,
+          "session_share": 0.9545
+        },
+        {
+          "executable": "head",
+          "calls": 133,
+          "sessions": 20,
+          "session_share": 0.9091
+        },
+        {
+          "executable": "find",
+          "calls": 59,
+          "sessions": 20,
+          "session_share": 0.9091
+        },
+        {
+          "executable": "sort",
+          "calls": 42,
+          "sessions": 18,
+          "session_share": 0.8182
+        },
+        {
+          "executable": "tail",
+          "calls": 58,
+          "sessions": 14,
+          "session_share": 0.6364
+        },
+        {
+          "executable": "true",
+          "calls": 87,
+          "sessions": 13,
+          "session_share": 0.5909
+        },
+        {
+          "executable": "cd",
+          "calls": 198,
+          "sessions": 12,
+          "session_share": 0.5455
+        }
+      ],
+      "command_composition": [
+        {
+          "feature": "复合调用（≥2 个命令段）",
+          "calls": 478,
+          "call_share": 0.7354,
+          "sessions": 22,
+          "session_share": 1.0,
+          "display_feature": "复合调用"
+        },
+        {
+          "feature": "重定向 / heredoc",
+          "calls": 459,
+          "call_share": 0.7062,
+          "sessions": 21,
+          "session_share": 0.9545,
+          "display_feature": "重定向/heredoc"
+        },
+        {
+          "feature": "条件链（&& / ||）",
+          "calls": 317,
+          "call_share": 0.4877,
+          "sessions": 22,
+          "session_share": 1.0,
+          "display_feature": "条件链"
+        },
+        {
+          "feature": "内联 Python heredoc",
+          "calls": 291,
+          "call_share": 0.4477,
+          "sessions": 20,
+          "session_share": 0.9091,
+          "display_feature": "内联 Python"
+        },
+        {
+          "feature": "管道（|）",
+          "calls": 188,
+          "call_share": 0.2892,
+          "sessions": 22,
+          "session_share": 1.0,
+          "display_feature": "管道"
+        },
+        {
+          "feature": "依赖恢复",
+          "calls": 81,
+          "call_share": 0.1246,
+          "sessions": 9,
+          "session_share": 0.4091,
+          "display_feature": "依赖恢复"
+        },
+        {
+          "feature": "进程 / 服务编排",
+          "calls": 56,
+          "call_share": 0.0862,
+          "sessions": 7,
+          "session_share": 0.3182,
+          "display_feature": "进程编排"
+        },
+        {
+          "feature": "能力探测",
+          "calls": 25,
+          "call_share": 0.0385,
+          "sessions": 10,
+          "session_share": 0.4545,
+          "display_feature": "能力探测"
+        }
+      ],
+      "high_cost_sessions": [
+        {
+          "task": "P2 文档工程",
+          "bash_calls": 110,
+          "group": "Step 0 · vibe 项目",
+          "missing_signals": 5,
+          "install_attempts": 7
+        },
+        {
+          "task": "双叉臂 · Step 0",
+          "bash_calls": 105,
+          "group": "双叉臂 · Step 0",
+          "missing_signals": 1,
+          "install_attempts": 3
+        },
+        {
+          "task": "双叉臂 · baseline",
+          "bash_calls": 69,
+          "group": "双叉臂 · baseline",
+          "missing_signals": 6,
+          "install_attempts": 5
+        },
+        {
+          "task": "P8 C++ 打包发布",
+          "bash_calls": 55,
+          "group": "Step 0 · vibe 项目",
+          "missing_signals": 5,
+          "install_attempts": 4
+        },
+        {
+          "task": "C11 文档转换",
+          "bash_calls": 51,
+          "group": "Step 0 · 12 用例",
+          "missing_signals": 1,
+          "install_attempts": 3
+        },
+        {
+          "task": "P6 OCR 表格流水线",
+          "bash_calls": 47,
+          "group": "Step 0 · vibe 项目",
+          "missing_signals": 3,
+          "install_attempts": 0
+        },
+        {
+          "task": "P5 交互式物理仿真",
+          "bash_calls": 30,
+          "group": "Step 0 · vibe 项目",
+          "missing_signals": 1,
+          "install_attempts": 1
+        },
+        {
+          "task": "P4 本地任务管理",
+          "bash_calls": 24,
+          "group": "Step 0 · vibe 项目",
+          "missing_signals": 3,
+          "install_attempts": 0
+        },
+        {
+          "task": "P1 财务 Dashboard",
+          "bash_calls": 23,
+          "group": "Step 0 · vibe 项目",
+          "missing_signals": 2,
+          "install_attempts": 0
+        },
+        {
+          "task": "P7 本地网站爬取",
+          "bash_calls": 20,
+          "group": "Step 0 · vibe 项目",
+          "missing_signals": 0,
+          "install_attempts": 0
+        }
+      ],
+      "group_summary": [
+        {
+          "group": "Step 0 · vibe 项目",
+          "sessions": 8,
+          "bash_calls": 328,
+          "median_bash_calls": 27.0,
+          "probe_events": 39,
+          "missing_signals": 22,
+          "install_attempts": 14,
+          "nonzero_bash_results": 22,
+          "nonzero_bash_rate": 0.0671,
+          "editor_calls": 6
+        },
+        {
+          "group": "Step 0 · 12 用例",
+          "sessions": 12,
+          "bash_calls": 148,
+          "median_bash_calls": 7.0,
+          "probe_events": 13,
+          "missing_signals": 7,
+          "install_attempts": 7,
+          "nonzero_bash_results": 9,
+          "nonzero_bash_rate": 0.0608,
+          "editor_calls": 0
+        },
+        {
+          "group": "双叉臂 · Step 0",
+          "sessions": 1,
+          "bash_calls": 105,
+          "median_bash_calls": 105,
+          "probe_events": 8,
+          "missing_signals": 1,
+          "install_attempts": 3,
+          "nonzero_bash_results": 6,
+          "nonzero_bash_rate": 0.0571,
+          "editor_calls": 0
+        },
+        {
+          "group": "双叉臂 · baseline",
+          "sessions": 1,
+          "bash_calls": 69,
+          "median_bash_calls": 69,
+          "probe_events": 13,
+          "missing_signals": 6,
+          "install_attempts": 5,
+          "nonzero_bash_results": 7,
+          "nonzero_bash_rate": 0.1014,
+          "editor_calls": 0
+        }
+      ],
+      "ab_comparison": [
+        {
+          "metric": "Bash 调用",
+          "baseline": 69,
+          "step0": 105,
+          "change": "+52.2%"
+        },
+        {
+          "metric": "最终非零 Bash",
+          "baseline": 7,
+          "step0": 6,
+          "change": "-1"
+        },
+        {
+          "metric": "主动探测目标",
+          "baseline": 13,
+          "step0": 8,
+          "change": "-38.5%"
+        },
+        {
+          "metric": "缺失信号",
+          "baseline": 6,
+          "step0": 1,
+          "change": "-83.3%"
+        },
+        {
+          "metric": "安装尝试",
+          "baseline": 5,
+          "step0": 3,
+          "change": "-40.0%"
+        }
+      ],
+      "step01_package_bundles": [
+        {
+          "priority": "P0",
+          "domain": "Python 入口、测试与轻量胶水",
+          "delivery": "默认 core",
+          "apt_packages": "python-is-python3; python3-venv; python3-pytest; python3-websocket; zip; unzip; pngcheck",
+          "evidence": "python3 覆盖 22/22；python 别名缺 2 次；pytest 缺 3 次；CDP websocket 曾运行时自装"
+        },
+        {
+          "priority": "P0",
+          "domain": "文档、PDF 与字体",
+          "delivery": "docs profile；单镜像时纳入",
+          "apt_packages": "pandoc; poppler-utils; poppler-data; ghostscript; fontconfig; fonts-noto-cjk; python3-reportlab; python3-pymupdf; python3-svglib; python3-fonttools; weasyprint",
+          "evidence": "P2+C11 共 161/650 次 Bash；缺 pandoc/pdfinfo/reportlab/fontTools/rlPyCairo，并出现 /tmp poppler 自举"
+        },
+        {
+          "priority": "P0",
+          "domain": "原生构建与发布",
+          "delivery": "build profile；单镜像时纳入",
+          "apt_packages": "build-essential; cmake; ninja-build; pkgconf",
+          "evidence": "P8 共 55 次 Bash；缺 cmake/ctest/zip/unzip，并通过 apt-download/dpkg-deb 自建工具链"
+        },
+        {
+          "priority": "P1",
+          "domain": "科学计算、数据与绘图",
+          "delivery": "data profile；按任务挂载",
+          "apt_packages": "python3-scipy; python3-matplotlib; python3-pandas",
+          "evidence": "scipy 缺 1 次；matplotlib 缺 3 次/2 会话；pandas 缺 2 次/2 会话；存在 stdlib/Pillow 回退"
+        },
+        {
+          "priority": "P2",
+          "domain": "通用 CLI、浏览器框架、CV 与 Web 框架",
+          "delivery": "先实验或暂缓",
+          "apt_packages": "不新增；另设 browser/docs-heavy profile 时再评估",
+          "evidence": "rg/jq/fd/awk/curl/wget 全部 0 次；Playwright/OpenCV/Flask/FastAPI/Uvicorn 只是零星探测且均有现成回退"
+        }
+      ]
+    },
+    "accessIssues": []
+  },
+  "sources": [
+    {
+      "id": "raw_logs",
+      "label": "22 份 DSH JSONL 对话导出",
+      "path": "logs"
+    },
+    {
+      "id": "behavior_metrics",
+      "label": "Bash 行为统计（由仓库解析器复算）",
+      "path": "reports/bash-behavior-analysis/behavior_metrics.json"
+    },
+    {
+      "id": "case_report",
+      "label": "12 用例现有汇总",
+      "path": "reports/cases-step0-summary.md"
+    },
+    {
+      "id": "vibe_report",
+      "label": "8 个 vibe 项目现有汇总",
+      "path": "reports/step0-vibe-summary.md"
+    },
+    {
+      "id": "ab_report",
+      "label": "双叉臂 baseline / Step 0 现有对比",
+      "path": "reports/step0-vs-baseline.md"
+    },
+    {
+      "id": "tool_mix_query",
+      "label": "Formal tool calls by tool",
+      "path": "reports/bash-behavior-analysis/tool_usage_summary.csv",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "description": "Formal tool calls by tool",
+        "sql": "SELECT tool, calls, sessions, call_share FROM read_csv_auto('reports/bash-behavior-analysis/tool_usage_summary.csv', header=true) ORDER BY calls DESC",
+        "executed_at": "2026-08-16T08:15:22.493043+00:00",
+        "tables_used": [
+          "reports/bash-behavior-analysis/tool_usage_summary.csv"
+        ]
+      }
+    },
+    {
+      "id": "executable_coverage_query",
+      "label": "Executable counts and session coverage",
+      "path": "reports/bash-behavior-analysis/executable_coverage.csv",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "description": "Executable counts and session coverage",
+        "sql": "SELECT executable, calls, sessions, session_share FROM read_csv_auto('reports/bash-behavior-analysis/executable_coverage.csv', header=true) ORDER BY sessions DESC, calls DESC LIMIT 12",
+        "executed_at": "2026-08-16T08:15:22.493043+00:00",
+        "tables_used": [
+          "reports/bash-behavior-analysis/executable_coverage.csv"
+        ]
+      }
+    },
+    {
+      "id": "command_composition_query",
+      "label": "Observable Bash composition features",
+      "path": "reports/bash-behavior-analysis/command_composition.csv",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "description": "Observable Bash composition features",
+        "sql": "SELECT feature, display_feature, calls, call_share, sessions, session_share FROM read_csv_auto('reports/bash-behavior-analysis/command_composition.csv', header=true) ORDER BY call_share DESC",
+        "executed_at": "2026-08-16T08:15:22.493043+00:00",
+        "tables_used": [
+          "reports/bash-behavior-analysis/command_composition.csv"
+        ]
+      }
+    },
+    {
+      "id": "high_cost_query",
+      "label": "Bash calls for the ten highest-cost sessions",
+      "path": "reports/bash-behavior-analysis/high_cost_sessions.csv",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "description": "Bash calls for the ten highest-cost sessions",
+        "sql": "SELECT task, bash_calls, \"group\", missing_signals, install_attempts FROM read_csv_auto('reports/bash-behavior-analysis/high_cost_sessions.csv', header=true) ORDER BY bash_calls DESC LIMIT 10",
+        "executed_at": "2026-08-16T08:15:22.493043+00:00",
+        "tables_used": [
+          "reports/bash-behavior-analysis/high_cost_sessions.csv"
+        ]
+      }
+    },
+    {
+      "id": "group_summary_query",
+      "label": "Log group behavior totals",
+      "path": "reports/bash-behavior-analysis/group_summary.csv",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "description": "Log group behavior totals",
+        "sql": "SELECT \"group\", sessions, bash_calls, median_bash_calls, probe_events, missing_signals, install_attempts, nonzero_bash_results, nonzero_bash_rate, editor_calls FROM read_csv_auto('reports/bash-behavior-analysis/group_summary.csv', header=true)",
+        "executed_at": "2026-08-16T08:15:22.493043+00:00",
+        "tables_used": [
+          "reports/bash-behavior-analysis/group_summary.csv"
+        ]
+      }
+    },
+    {
+      "id": "ab_comparison_query",
+      "label": "Double-wishbone baseline and Step 0 comparison",
+      "path": "reports/bash-behavior-analysis/ab_comparison.csv",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "description": "Double-wishbone baseline and Step 0 comparison",
+        "sql": "SELECT metric, baseline, step0, change FROM read_csv_auto('reports/bash-behavior-analysis/ab_comparison.csv', header=true)",
+        "executed_at": "2026-08-16T08:15:22.493043+00:00",
+        "tables_used": [
+          "reports/bash-behavior-analysis/ab_comparison.csv"
+        ]
+      }
+    },
+    {
+      "id": "step01_package_query",
+      "label": "Step 0.1 package-layer decision matrix",
+      "path": "reports/bash-behavior-analysis/step01_package_bundles.csv",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "description": "Step 0.1 package-layer decision matrix",
+        "sql": "SELECT priority, domain, delivery, apt_packages, evidence FROM read_csv_auto('reports/bash-behavior-analysis/step01_package_bundles.csv', header=true) ORDER BY priority, domain",
+        "executed_at": "2026-08-16T08:15:22.493043+00:00",
+        "tables_used": [
+          "reports/bash-behavior-analysis/step01_package_bundles.csv"
+        ]
+      }
+    },
+    {
+      "id": "ubuntu_resolute_packages",
+      "label": "Ubuntu 26.04 (Resolute) package index",
+      "href": "https://packages.ubuntu.com/resolute/"
+    },
+    {
+      "id": "pep668",
+      "label": "PEP 668: externally managed Python environments",
+      "href": "https://peps.python.org/pep-0668/"
+    },
+    {
+      "id": "python_venv",
+      "label": "Python venv documentation",
+      "href": "https://docs.python.org/3/library/venv.html"
+    }
+  ]
+}

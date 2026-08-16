@@ -1,0 +1,6 @@
+priority,domain,delivery,apt_packages,evidence
+P0,Python 入口、测试与轻量胶水,默认 core,python-is-python3; python3-venv; python3-pytest; python3-websocket; zip; unzip; pngcheck,python3 覆盖 22/22；python 别名缺 2 次；pytest 缺 3 次；CDP websocket 曾运行时自装
+P0,文档、PDF 与字体,docs profile；单镜像时纳入,pandoc; poppler-utils; poppler-data; ghostscript; fontconfig; fonts-noto-cjk; python3-reportlab; python3-pymupdf; python3-svglib; python3-fonttools; weasyprint,P2+C11 共 161/650 次 Bash；缺 pandoc/pdfinfo/reportlab/fontTools/rlPyCairo，并出现 /tmp poppler 自举
+P0,原生构建与发布,build profile；单镜像时纳入,build-essential; cmake; ninja-build; pkgconf,P8 共 55 次 Bash；缺 cmake/ctest/zip/unzip，并通过 apt-download/dpkg-deb 自建工具链
+P1,科学计算、数据与绘图,data profile；按任务挂载,python3-scipy; python3-matplotlib; python3-pandas,scipy 缺 1 次；matplotlib 缺 3 次/2 会话；pandas 缺 2 次/2 会话；存在 stdlib/Pillow 回退
+P2,通用 CLI、浏览器框架、CV 与 Web 框架,先实验或暂缓,不新增；另设 browser/docs-heavy profile 时再评估,rg/jq/fd/awk/curl/wget 全部 0 次；Playwright/OpenCV/Flask/FastAPI/Uvicorn 只是零星探测且均有现成回退
