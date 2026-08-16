@@ -1,0 +1,4 @@
+session_id,source_file,missing_module,count
+session-vibe-04,logs/cases/step0-vibe/session-vibe-04.jsonl,fastapi,1
+session-vibe-04,logs/cases/step0-vibe/session-vibe-04.jsonl,flask,1
+session-vibe-04,logs/cases/step0-vibe/session-vibe-04.jsonl,uvicorn,1

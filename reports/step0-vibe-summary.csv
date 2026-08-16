@@ -1,0 +1,9 @@
+project,task,bash_calls,messages,editor_calls,primary_toolchain,missing_signals,install_attempts,evaluator,notes
+P1,财务 Dashboard,23,48,0,Pillow + Python stdlib,"matplotlib,pandas 仅探测",0,7/7,没有补装 pandas/matplotlib，用 Pillow 直接画图并生成 HTML 报告
+P2,文档工程,110,221,0,自建 .build-venv：reportlab+PyMuPDF+svglib,pandoc 命令缺失；reportlab/fontTools/rlPyCairo 缺失,10,8/8,最贵：110 次 bash。convert/gs/tesseract/PIL 用于视觉自检；最终 8/8
+P3,修仓库,19,36,0,/tmp venv 中的 pytest,python 命令缺失；pytest 模块缺失,2,4/4,修复定价和引擎，新增边界测试；30000 包裹 0.012s
+P4,本地任务管理,24,50,0,stdlib http.server + sqlite3 + unittest,flask/fastapi/uvicorn 仅探测,0,7/7,探测框架缺失后选择零依赖方案，测试与 README 完整
+P5,交互式物理仿真,30,60,0,单 HTML JS 仿真 + Chrome CDP selftest,playwright 缺失,1,7/7,能量漂移 7.6e-9，低于 0.25% 阈值；内置 selftest 通过
+P6,OCR 表格流水线,47,99,2,tesseract CLI + PIL/numpy,pngcheck 命令缺失；cv2/pytesseract 缺失,0,7/7,18/18 准确；14 张 OCR + 4 张恢复；多 PSM 回退
+P7,本地网站爬取,20,37,0,Python stdlib + Chrome headless,无,0,7/7,8 页面、8 张有效截图、1 个坏链；无依赖缺口
+P8,C++ 打包发布,55,120,4,CMake+CTest+CPack；apt-download cmake,cmake/ctest/zip/unzip 缺失,4,6/6,在 /tmp 自建 cmake；产出 tar.gz+zip+checksum+install.sh

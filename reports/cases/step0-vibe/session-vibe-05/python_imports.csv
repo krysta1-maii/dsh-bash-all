@@ -1,0 +1,6 @@
+session_id,source_file,module,count
+session-vibe-05,logs/cases/step0-vibe/session-vibe-05.jsonl,PIL,3
+session-vibe-05,logs/cases/step0-vibe/session-vibe-05.jsonl,collections,1
+session-vibe-05,logs/cases/step0-vibe/session-vibe-05.jsonl,pathlib,3
+session-vibe-05,logs/cases/step0-vibe/session-vibe-05.jsonl,playwright,1
+session-vibe-05,logs/cases/step0-vibe/session-vibe-05.jsonl,statistics,1

@@ -1,0 +1,10 @@
+session_id,source_file,probe,count
+session-vibe-05,logs/cases/step0-vibe/session-vibe-05.jsonl,chromedriver,1
+session-vibe-05,logs/cases/step0-vibe/session-vibe-05.jsonl,chromium,1
+session-vibe-05,logs/cases/step0-vibe/session-vibe-05.jsonl,chromium-browser,1
+session-vibe-05,logs/cases/step0-vibe/session-vibe-05.jsonl,chromium-driver,1
+session-vibe-05,logs/cases/step0-vibe/session-vibe-05.jsonl,firefox,1
+session-vibe-05,logs/cases/step0-vibe/session-vibe-05.jsonl,google-chrome,1
+session-vibe-05,logs/cases/step0-vibe/session-vibe-05.jsonl,node,1
+session-vibe-05,logs/cases/step0-vibe/session-vibe-05.jsonl,npm,1
+session-vibe-05,logs/cases/step0-vibe/session-vibe-05.jsonl,python3,1

@@ -1,0 +1,6 @@
+session_id,source_file,probe,count
+session-vibe-06,logs/cases/step0-vibe/session-vibe-06.jsonl,chafa,1
+session-vibe-06,logs/cases/step0-vibe/session-vibe-06.jsonl,img2txt,1
+session-vibe-06,logs/cases/step0-vibe/session-vibe-06.jsonl,jp2,1
+session-vibe-06,logs/cases/step0-vibe/session-vibe-06.jsonl,tesseract,1
+session-vibe-06,logs/cases/step0-vibe/session-vibe-06.jsonl,viu,1

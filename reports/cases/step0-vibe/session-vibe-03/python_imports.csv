@@ -1,0 +1,5 @@
+session_id,source_file,module,count
+session-vibe-03,logs/cases/step0-vibe/session-vibe-03.jsonl,parcelroute,1
+session-vibe-03,logs/cases/step0-vibe/session-vibe-03.jsonl,parcelroute.models,1
+session-vibe-03,logs/cases/step0-vibe/session-vibe-03.jsonl,parcelroute.pricing,1
+session-vibe-03,logs/cases/step0-vibe/session-vibe-03.jsonl,pytest,1

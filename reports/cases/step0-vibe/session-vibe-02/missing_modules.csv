@@ -1,0 +1,4 @@
+session_id,source_file,missing_module,count
+session-vibe-02,logs/cases/step0-vibe/session-vibe-02.jsonl,fontTools,2
+session-vibe-02,logs/cases/step0-vibe/session-vibe-02.jsonl,reportlab,1
+session-vibe-02,logs/cases/step0-vibe/session-vibe-02.jsonl,rlPyCairo,1

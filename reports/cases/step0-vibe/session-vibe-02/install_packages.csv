@@ -1,0 +1,10 @@
+session_id,source_file,raw_packages,count
+session-vibe-02,logs/cases/step0-vibe/session-vibe-02.jsonl,--user reportlab markdown beautifulsoup4 2>,1
+session-vibe-02,logs/cases/step0-vibe/session-vibe-02.jsonl,-q fonttools 2>,1
+session-vibe-02,logs/cases/step0-vibe/session-vibe-02.jsonl,-q pymupdf 2>,1
+session-vibe-02,logs/cases/step0-vibe/session-vibe-02.jsonl,-y -qq python3-reportlab >/tmp/apt.log 2>,1
+session-vibe-02,logs/cases/step0-vibe/session-vibe-02.jsonl,reportlab markdown beautifulsoup4 2>,2
+session-vibe-02,logs/cases/step0-vibe/session-vibe-02.jsonl,"reportlab"")",1
+session-vibe-02,logs/cases/step0-vibe/session-vibe-02.jsonl,"reportlab"")\n\n    if not _venv_python().exists():\n        print(""[build] 创建虚拟环境 .build-venv ..."", file=sys.stderr)\n        subprocess.check_call([sys.executable, ""-m"", ""venv"", str(VENV_DIR)])\n\n    print(""[build] 安装依赖：reportlab ..."", file=sys.stderr)\n    subprocess.check_call(\n        [_venv_pip(), ""install"", ""-q"", ""reportlab>=4.0""]\n    )\n    os.execv(str(_venv_python()), [str(_venv_python()), str(__file__), *sys.argv[1:]])\n'''",1
+session-vibe-02,logs/cases/step0-vibe/session-vibe-02.jsonl,"reportlab"")\n\n    venv_python = _venv_python()\n    venv_ready = False\n    if venv_python.exists():\n        probe = subprocess.run(\n            [venv_python, ""-c"", ""import reportlab""],\n            stdout=subprocess.DEVNULL,\n            stderr=subprocess.DEVNULL,\n        )\n        venv_ready = probe.returncode == 0\n\n    if not venv_ready:\n        if not venv_python.exists():\n            print(""[build] 创建虚拟环境 .build-venv ..."", file=sys.stderr)\n            subprocess.check_call([sys.executable, ""-m"", ""venv"", str(VENV_DIR)])\n        print(""[build] 安装依赖：reportlab ..."", file=sys.stderr)\n        subprocess.check_call([_venv_pip(), ""install"", ""-q"", ""reportlab>=4.0""])\n\n    os.execv(str(venv_python), [str(venv_python), str(__file__), *sys.argv[1:]])\n'''",1
+session-vibe-02,logs/cases/step0-vibe/session-vibe-02.jsonl,svglib 2>,1

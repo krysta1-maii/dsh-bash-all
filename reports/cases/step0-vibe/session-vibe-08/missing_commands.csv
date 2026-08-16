@@ -1,0 +1,5 @@
+session_id,source_file,missing_command,count
+session-vibe-08,logs/cases/step0-vibe/session-vibe-08.jsonl,cmake,2
+session-vibe-08,logs/cases/step0-vibe/session-vibe-08.jsonl,ctest,1
+session-vibe-08,logs/cases/step0-vibe/session-vibe-08.jsonl,unzip,1
+session-vibe-08,logs/cases/step0-vibe/session-vibe-08.jsonl,zip,1

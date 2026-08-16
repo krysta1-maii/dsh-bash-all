@@ -1,0 +1,3 @@
+session_id,source_file,package_manager,count
+session-vibe-08,logs/cases/step0-vibe/session-vibe-08.jsonl,apt,2
+session-vibe-08,logs/cases/step0-vibe/session-vibe-08.jsonl,pip,2

@@ -1,0 +1,16 @@
+session_id,source_file,executable,count
+session-vibe-01,logs/cases/step0-vibe/session-vibe-01.jsonl,cat,8
+session-vibe-01,logs/cases/step0-vibe/session-vibe-01.jsonl,cd,6
+session-vibe-01,logs/cases/step0-vibe/session-vibe-01.jsonl,chmod,1
+session-vibe-01,logs/cases/step0-vibe/session-vibe-01.jsonl,echo,9
+session-vibe-01,logs/cases/step0-vibe/session-vibe-01.jsonl,find,2
+session-vibe-01,logs/cases/step0-vibe/session-vibe-01.jsonl,grep,1
+session-vibe-01,logs/cases/step0-vibe/session-vibe-01.jsonl,head,3
+session-vibe-01,logs/cases/step0-vibe/session-vibe-01.jsonl,ls,6
+session-vibe-01,logs/cases/step0-vibe/session-vibe-01.jsonl,pwd,2
+session-vibe-01,logs/cases/step0-vibe/session-vibe-01.jsonl,python3,19
+session-vibe-01,logs/cases/step0-vibe/session-vibe-01.jsonl,rm,1
+session-vibe-01,logs/cases/step0-vibe/session-vibe-01.jsonl,sed,2
+session-vibe-01,logs/cases/step0-vibe/session-vibe-01.jsonl,sort,2
+session-vibe-01,logs/cases/step0-vibe/session-vibe-01.jsonl,tail,3
+session-vibe-01,logs/cases/step0-vibe/session-vibe-01.jsonl,true,2

@@ -1,0 +1,8 @@
+session_id,source_file,missing_command,count
+session-vibe-02,logs/cases/step0-vibe/session-vibe-02.jsonl,pandoc,1
+session-vibe-03,logs/cases/step0-vibe/session-vibe-03.jsonl,python,1
+session-vibe-06,logs/cases/step0-vibe/session-vibe-06.jsonl,pngcheck,1
+session-vibe-08,logs/cases/step0-vibe/session-vibe-08.jsonl,cmake,2
+session-vibe-08,logs/cases/step0-vibe/session-vibe-08.jsonl,ctest,1
+session-vibe-08,logs/cases/step0-vibe/session-vibe-08.jsonl,unzip,1
+session-vibe-08,logs/cases/step0-vibe/session-vibe-08.jsonl,zip,1

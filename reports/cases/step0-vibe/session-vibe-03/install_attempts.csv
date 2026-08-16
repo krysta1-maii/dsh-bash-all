@@ -1,0 +1,2 @@
+session_id,source_file,package_manager,count
+session-vibe-03,logs/cases/step0-vibe/session-vibe-03.jsonl,pip,2
